@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Gubernator</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title><%= site_title(content_for?(:page_title) ? yield(:page_title).squish.html_safe : "#{@page_title} — #{strip_tags(@site_name.content.body)}") %></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <%= favicon_link_tag %>
 
-<%= yield %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class='body container-fluid'>
+    <div class="container main_container">
+      <!-- top logotype -->
+      <div class="top_header row">
+        <div class="col-xs-12">
+          <%= link_to 'Главная', '/', :class => 'with_background' %>
+        </div>
+      </div>
 
-</body>
+      <!-- content -->
+      <div class="row white_wrapper">
+        <!-- navigation && search -->
+        <div class="col-xs-12 main_navigation">
+          <%= render_partial_for_region @main_navigation, 'main' %>
+
+          <div class="pull-right search-wrapper">
+            <%= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk', :class => ['twitter_icon', 'pull-left'], :target => :_blank %>
+            <%= form_tag '/', :method => :get, :class => ['pull-left', 'search_form'] do %>
+              <input type='search' placeholder='Поиск...' name='parts_params[search][q]' value='<%= params[:parts_params].present? && params[:parts_params][:search].present? ? params[:parts_params][:search][:q] : nil %>'>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <%= yield %>
+        </div>
+      </div>
+
+
+    </div>
+
+  </body>
 </html>

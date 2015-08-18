@@ -16,7 +16,7 @@ module Cmsable
       eval "@#{region} = page.regions.#{region}"
     end
 
-    @site_title = @site_name.try(:content).try(:body) || 'Абитуриент ТУСУР'
+    @site_title = @site_name.try(:content).try(:body) || 'Интернет-сайт Губернатора Томской области Жвачкина Сергея Анатольевича'
     @page_title = page.title
     @navigation_title = page.navigation_title
     @page_meta = page.meta

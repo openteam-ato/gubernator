@@ -1,0 +1,59 @@
+.body
+  background: image-url('top_background.png') no-repeat center 0, image-url('background.png') repeat 0 0
+
+  .top_header
+    .with_background
+      background: image-url('logotype.png') no-repeat 0 0
+      width: 432px
+      height: 152px
+      display: block
+      text-indent: -9999px
+      margin-top: 16px
+
+  .white_wrapper
+    background: #fff
+    +box-shadow(0 0 30px 0 #053d22)
+
+    .main_navigation
+      padding: 57px 72px 48px
+
+      .nav
+        li
+          &.active
+            a
+              color: #07754d
+              text-decoration: underline
+              cursor: default
+              background-color: #fff
+
+          a
+            color: #636363
+            text-transform: uppercase
+            font-size: 17px
+            font-family: 'pfbulletinsanspro-medium', arial
+            padding: 10px 20px
+
+            &:hover
+              background-color: #fff
+              color: #07754d
+
+      .search-wrapper
+        margin-top: 7px
+
+        .twitter_icon
+          text-indent: -9999px
+          background: image-url('icons/twitter_sprite_icon.jpg') no-repeat
+          width: 25px
+          height: 21px
+          margin-right: 25px
+
+          &:hover
+            background-position: center bottom
+
+        .search_form
+          input
+            outline: none
+            +border-radius(10px)
+            border: 1px inset
+            padding-left: 10px
+
