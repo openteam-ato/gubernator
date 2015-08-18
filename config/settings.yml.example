@@ -1,0 +1,18 @@
+app:
+  domain:             .domain
+  secret:             SECRET
+  url:                http://domain.url/
+  host:               host
+  nocache_host:       nocache.host
+  from:               mail@mail.ma
+
+cms:
+  url:                http://cms.url/
+  site_slug:          SLUG
+
+errors:
+  url:                http://errors.url/
+  key:                KEY
+
+storage:
+  url:                http://storage.url/
