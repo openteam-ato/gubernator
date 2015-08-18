@@ -22,13 +22,14 @@ group :default do
   gem 'kaminari'
   gem 'nokogiri'
   gem 'non-stupid-digest-assets'
+  gem 'pg'
   gem 'progress_bar',                  :require => false
   gem 'rack-utf8_sanitizer'
   gem 'rails',                         '~> 4.0.3'
   gem 'rest-client'
   gem 'russian'
-  gem 'sitemap_generator'
   gem 'simple_form'
+  gem 'sitemap_generator'
   gem 'whenever',                      '~> 0.9.2'
 end
 
