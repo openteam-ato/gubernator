@@ -63,11 +63,6 @@
   padding-left: 75px
   margin-top: 25px
 
-  .more_news
-    color: #42754d
-    padding-bottom: 20px
-    display: block
-
   ul
     padding: 16px 50px 0 0
 
@@ -84,5 +79,50 @@
           color: #42754d
           text-decoration: underline
 
+          &:hover
+            text-decoration: none
+
       .annotation
         color: #8e8888
+
+  .more_news
+    color: #42754d
+    padding-bottom: 20px
+    display: block
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none
+
+.quotes_wrapper
+  +clearfix
+  margin-top: 50px
+  width: 566px
+
+  .quote_l, .quote_r
+    height: 25px
+    width: 30px
+    text-indent: -9999px
+
+  .quote_l
+    background: image-url('icons/blockquote-l.png') no-repeat left top
+    float: left
+
+  .quote
+    line-height: 38px
+    font-size: 30px
+    margin-top: -8px
+    color: #494949
+    font-family: "PFDinTextCompPro-Light_0", arial
+    padding-left: 45px
+
+  .quote_r
+    background: image-url('icons/blockquote-r.png') no-repeat right bottom
+    +inline-block
+    margin-left: 10px
+
+  .sign
+    background: image-url('icons/sign.png') no-repeat right bottom
+    height: 100px
+    width: 190px
+    float: right

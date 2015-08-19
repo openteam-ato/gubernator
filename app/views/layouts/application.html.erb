@@ -20,29 +20,49 @@
       </div>
 
       <div class="white_wrapper">
-      <!-- content -->
-      <div class="row">
-        <!-- navigation && search -->
-        <div class="col-xs-12 main_navigation">
-          <%= render_partial_for_region @main_navigation, 'main' %>
+        <!-- content -->
+        <div class="row">
+          <!-- navigation && search -->
+          <div class="col-xs-12 main_navigation">
+            <%= render_partial_for_region @main_navigation, 'main' %>
 
-          <div class="pull-right search-wrapper">
-            <%= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk', :class => ['twitter_icon', 'pull-left'], :target => :_blank %>
-            <%= form_tag '/', :method => :get, :class => ['pull-left', 'search_form'] do %>
-              <input type='search' placeholder='Поиск...' name='parts_params[search][q]' value='<%= params[:parts_params].present? && params[:parts_params][:search].present? ? params[:parts_params][:search][:q] : nil %>'>
-            <% end %>
+            <div class="pull-right search-wrapper">
+              <%= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk', :class => ['twitter_icon', 'pull-left'], :target => :_blank %>
+              <%= form_tag '/', :method => :get, :class => ['pull-left', 'search_form'] do %>
+                <input type='search' placeholder='Поиск...' name='parts_params[search][q]' value='<%= params[:parts_params].present? && params[:parts_params][:search].present? ? params[:parts_params][:search][:q] : nil %>'>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= yield(:content) %>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <%= yield(:content) %>
+
+      <div class="row footer_wrapper">
+        <div class="col-xs-12 footer">
+          <div class='pull-left'>
+            <p>
+              © Сергей Жвачкин,  2015.
+            </p>
+            <p>
+              Ваши идеи и предложения по развитию Томской области можно направлять по почте <%= mail_to 'idea@tomsk.gov.ru' %>
+          </p>
+        </div>
+        <div class="pull-right">
+          <p>
+            Фото: Валерий Доронин
+          </p>
+          <p class='second'>
+            Игорь Крамаренко
+          </p>
         </div>
       </div>
     </div>
 
+  </div>
 
-    </div>
-
-  </body>
+</body>
 </html>
