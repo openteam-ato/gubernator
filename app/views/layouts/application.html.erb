@@ -15,11 +15,13 @@
       <div class="top_header row">
         <div class="col-xs-12">
           <%= link_to 'Главная', '/', :class => 'with_background' %>
+          <%= link_to 'JSON', @link_to_json, :class => 'development json' if Rails.env.development? %>
         </div>
       </div>
 
+      <div class="white_wrapper">
       <!-- content -->
-      <div class="row white_wrapper">
+      <div class="row">
         <!-- navigation && search -->
         <div class="col-xs-12 main_navigation">
           <%= render_partial_for_region @main_navigation, 'main' %>
@@ -31,11 +33,13 @@
             <% end %>
           </div>
         </div>
-
+      </div>
+      <div class="row">
         <div class="col-xs-12">
-          <%= yield %>
+          <%= yield(:content) %>
         </div>
       </div>
+    </div>
 
 
     </div>
