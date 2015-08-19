@@ -41,7 +41,6 @@
       </div>
 
       <div class="row footer_wrapper">
-        <%= link_to 'JSON', @link_to_json, :class => 'development json', :target => :_blank if Rails.env.development? %>
         <div class="col-xs-12 footer">
           <div class='pull-left'>
             <p>
@@ -62,6 +61,10 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="development">
+    <%= link_to 'JSON', @link_to_json, :class => 'json', :target => :_blank if Rails.env.development? %>
   </div>
 
 </body>
