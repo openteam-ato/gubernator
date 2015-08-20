@@ -1,10 +1,10 @@
 <%= content_for :content do %>
 
-  <%= render_partial_for_region @gallery_of_honor %>
+  <%= render_partial_for_region @gallery_of_honor, 'main_page' %>
 
   <div class="row">
     <div class="col-lg-5">
-      <%= render_partial_for_region @news %>
+      <%= render_partial_for_region @news, 'main_page' %>
     </div>
 
     <div class="col-lg-7">
