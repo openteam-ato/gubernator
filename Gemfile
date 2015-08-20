@@ -16,13 +16,9 @@ group :default do
   gem 'curb'
   gem 'esp-commons'
   gem 'gilenson'
-  gem 'gravtastic'
   gem 'hashie'
-  gem 'interactor-rails'
   gem 'kaminari'
-  gem 'nokogiri'
   gem 'non-stupid-digest-assets'
-  gem 'pg'
   gem 'progress_bar',                  :require => false
   gem 'rack-utf8_sanitizer'
   gem 'rails',                         '~> 4.0.3'
@@ -30,7 +26,6 @@ group :default do
   gem 'russian'
   gem 'simple_form'
   gem 'sitemap_generator'
-  gem 'whenever',                      '~> 0.9.2'
 end
 
 group :development do
