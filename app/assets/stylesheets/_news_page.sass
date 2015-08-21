@@ -1,0 +1,78 @@
+.news_list_page_wrapper
+  padding: 0 76px
+
+  .item
+    margin-bottom: 20px
+
+    .date
+      color: #636363
+      font-size: 12px
+      font-weight: 400
+      font-family: 'Myriad Pro', 'Trebuchet MS', arial
+
+    .entry
+      .title
+        margin-bottom: 15px
+
+        a
+          font-size: 16px
+          font-weight: 400
+          color: #42754d
+          text-decoration: underline
+          font-family: 'Myriad Pro', 'Trebuchet MS', arial
+
+          &:hover
+            text-decoration: none
+
+      .annotation
+        color: #636363
+        border-bottom: 1px solid #e1e1e1
+        padding-bottom: 15px
+
+  .pagination
+    padding-left: 170px
+
+    span
+      display: block
+      float: left
+      font-size: 13px
+      height: 21px
+      line-height: 23px
+      margin-right: 4px
+      padding: 0 8px
+      text-align: center
+
+      a
+        color: #42754d
+        text-align: center
+
+    .current, .next
+      +border-radius(2px)
+      background: image-url('paginator-background.png') repeat-x 0 0
+      color: #fff
+
+      a
+        color: inherit
+
+.news_item_wrapper
+  padding: 0 76px
+
+  .date
+    color: #636363
+    font-size: 12px
+    font-weight: 400
+    font-family: 'Myriad Pro', 'Trebuchet MS', arial
+
+  .title
+    color: #07754d
+    margin-bottom: 15px
+    font-size: 16px
+    font-family: 'Myriad Pro', 'Trebuchet MS', arial
+
+  .text
+    color: #636363
+
+    p
+      font-size: 14px
+      line-height: 20px
+      margin-bottom: 25px

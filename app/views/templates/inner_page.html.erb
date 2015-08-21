@@ -1,0 +1,7 @@
+<% content_for :content do %>
+  <% if ['NewsListPart', 'NewsItemPart'].include?(@content.type)  %>
+    <%= render_partial_for_region @content, 'news_page'%>
+  <% else %>
+    <%= render_partial_for_region @content %>
+  <% end %>
+<% end %>

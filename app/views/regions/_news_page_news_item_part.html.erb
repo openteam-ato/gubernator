@@ -1,0 +1,22 @@
+<div class="news_item_wrapper">
+  <div class="row item">
+    <div class="col-xs-2 date"><%= l Date.parse(object.since) %></div>
+    <div class="col-xs-10 entry">
+      <div class="title">
+        <%= strip_tags(object.title) %>
+      </div>
+      <div class="text">
+        <%= raw object.body %>
+      </div>
+      <div class="images row">
+        <% if object.images.any? %>
+          <% object.images.each do |photo| %>
+            <div class="col-xs-6 col-md-3">
+              <%= link_to (image_tag photo.url, :class => 'img-responsive'), photo.url, :class => 'thumbnail js-colorbox', :rel => 'colorbox' %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

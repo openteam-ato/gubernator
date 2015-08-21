@@ -22,7 +22,7 @@ module Cmsable
     @page_meta = page.meta
     @link_to_json = remote_url
 
-    render "templates/#{page.template}" unless page.template == 'educations'
+    render "templates/#{page.template}"
   end
 
   def remote_url

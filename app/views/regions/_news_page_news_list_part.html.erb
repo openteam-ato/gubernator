@@ -1,0 +1,21 @@
+<div class="news_list_page_wrapper">
+  <% object.items.each do |news| %>
+    <div class="row item">
+      <div class="col-xs-2 date"><%= l Date.parse(news.since) %></div>
+      <div class="col-xs-10 entry">
+        <div class="title">
+          <%= link_to strip_tags(news.title), news.link %>
+        </div>
+        <div class="annotation">
+          <%= raw news.annotation %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if object.pagination %>
+    <% @array = object.items %>
+    <% @array = Kaminari.paginate_array(@array, :total_count => object.pagination.total_count).page(object.pagination.current_page).per(object.pagination.per_page) %>
+    <%= paginate @array, :outer_window => 3 %>
+  <% end %>
+</div>
