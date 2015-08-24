@@ -1,11 +1,11 @@
-$ ->
+@init_main_page_gallery = ->
   $('.js-main_page-galleria').isotope
     itemSelector: '.js-main_page-galleria-item'
     layoutMode: 'packery'
 
     true
 
-  zoom = 1.2
+  zoom = 1.2 # коэффициент для ширины и высоты
 
   $('.js-main_page-galleria-item img').each (index, item) ->
     element = $(this)
@@ -36,9 +36,3 @@ $ ->
       return
 
     return
-
-  $('.js-colorbox').colorbox
-    maxWidth: '80%'
-    maxHeight: '80%'
-
-    true

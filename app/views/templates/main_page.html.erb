@@ -10,11 +10,15 @@
     <div class="col-lg-7">
       <div class="quotes_wrapper">
         <div class='quote_l'>"</div>
-        <p class='quote'>
+        <p class='quote js-quote'>
           Всегда беру себе высокопрофессиональных и умных замов, которые на своем направлении знают больше, чем я. Можно, конечно, пригласить таких, которые будут только поддакивать – но инициатива должна идти не сверху вниз, а наоборот
           <span class="quote_r">"</span>
         </p>
         <div class='sign'></div>
+
+        <div class="js-quotes-list quotes-list">
+          <%= raw @slogan.content.body %>
+        </div>
       </div>
     </div>
   </div>
