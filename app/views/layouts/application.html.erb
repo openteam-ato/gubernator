@@ -64,9 +64,11 @@
 
     </div>
 
-    <div class="development">
-      <%= link_to 'JSON', @link_to_json, :class => 'json', :target => :_blank if Rails.env.development? %>
-    </div>
+    <% if Rails.env.development? %>
+      <div class="development">
+        <%= link_to 'JSON', @link_to_json, :class => 'json', :target => :_blank %>
+      </div>
+    <% end %>
 
   </div>
 </body>
