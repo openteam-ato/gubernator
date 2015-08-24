@@ -6,3 +6,6 @@ ru:
       previous: 'Предыдущая'
       next: 'Следующая'
       truncate: '&hellip;'
+  date:
+    formats:
+      custom: "%d %B %Y"

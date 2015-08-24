@@ -26,6 +26,7 @@ group :default do
   gem 'rails',                          '~> 4.0.3'
   gem 'rest-client'
   gem 'russian'
+  gem 'russian'
   gem 'simple_form'
   gem 'sitemap_generator'
 end
