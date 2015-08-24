@@ -10,9 +10,7 @@
   $('.js-main_page-galleria-item img').each (index, item) ->
     element = $(this)
     original_width = element.width()
-    console.log original_width
     target_width = Math.round(element.width() * zoom)
-    console.log target_width
     original_height = element.height()
     target_height = Math.round(element.height() * zoom)
     element

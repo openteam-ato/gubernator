@@ -4,4 +4,6 @@
 //= require plugins
 //= require main_page_gallery
 //= require colorbox
+//= require slogan
+
 //= require init
