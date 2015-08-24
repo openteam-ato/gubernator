@@ -1,9 +1,14 @@
-@font-face
+=declare-font-face($font-family, $font-filename, $font-weight: normal, $font-style: normal, $font-stretch: normal)
+  @font-face
+    font-family: "#{$font-family}"
+    src: url(asset-path("#{$font-filename}.eot"))
+    src: url(asset-path("#{$font-filename}.eot?#iefix")) format("embedded-opentype"), url(asset-path("#{$font-filename}.woff")) format("woff"), url(asset-path("#{$font-filename}.ttf")) format("truetype"), url(asset-path("#{$font-filename}.svg##{$font-filename}")) format("svg")
+    font-weight: $font-weight
+    font-style: $font-style
+    font-stretch: $font-stretch
 
-  font-family: "PFDinTextCompPro-Light_0"
-  src: url(asset-path("PFDinTextCompPro-Light_0.eot"))
-  src: url(asset-path("PFDinTextCompPro-Light_0.eot?#iefix")) format("embedded-opentype"), url(asset-path("PFDinTextCompPro-Light_0.ttf")) format("truetype"), url(asset-path("PFDinTextCompPro-Light_0.svg#PFDinTextCompPro-Light_0")) format("svg")
-
-  font-family: "pfbulletinsanspro-medium"
-  src: url(asset-path("pfbulletinsanspro-medium.eot"))
-  src: url(asset-path("pfbulletinsanspro-medium.eot?#iefix")) format("embedded-opentype"), url(asset-path("pfbulletinsanspro-medium.ttf")) format("truetype"), url(asset-path("pfbulletinsanspro-medium.svg#pfbulletinsanspro-medium")) format("svg")
++declare-font-face('PF Din Text CompPro light', 'Pf_Din_Text_CompPro_light')
++declare-font-face('Pf Bulletin SansPro medium', 'Pf_Bulletin_SansPro-medium')
+//+declare-font-face('', '')
+//+declare-font-face('', '')
+//+declare-font-face('', '')
