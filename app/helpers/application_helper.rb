@@ -21,7 +21,7 @@ module ApplicationHelper
         klass = []
         klass << item_class
         klass << 'active' if value['selected']
-        klass << 'has_children' if value['children'] && value['title'] != 'Почему ТУСУР?'
+        klass << 'has_children' if value['children']
         klass = klass.delete_if(&:blank?).join(' ').squish
         klass = nil if klass.empty?
         content_tag :li, :class => klass do

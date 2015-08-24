@@ -23,7 +23,7 @@
           <!-- content -->
           <div class="row">
             <!-- navigation && search -->
-            <div class="col-xs-12 main_navigation">
+            <div class="col-xs-12 main_navigation <%= params[:path].try(:split, '/').try(:[], 1) %>">
               <%= render_partial_for_region @main_navigation, 'main' %>
 
               <div class="pull-right search-wrapper">

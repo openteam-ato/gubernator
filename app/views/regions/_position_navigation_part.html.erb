@@ -1,0 +1,5 @@
+<div class="position_page_wrapper">
+  <div class="subnavigation <%= params[:path].try(:split, '/').try(:[], 1) %>">
+    <%= render_cms_navigation object.try(:values).try(:first).try(:[], 'children'), 'nav nav-pills pull-left' %>
+  </div>
+</div>
