@@ -1,3 +1,5 @@
+<% content_for :page_title, strip_tags(@site_name.content.body).squish %>
+
 <%= content_for :content do %>
 
   <%= render_partial_for_region @gallery_of_honor, 'main_page' %>
