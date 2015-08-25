@@ -8,5 +8,6 @@
 //= require colorbox
 //= require slogan
 //= require affix
+//= require slide-up
 
 //= require init

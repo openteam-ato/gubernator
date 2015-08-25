@@ -8,7 +8,7 @@
     $('.mainblock').css(
       {
         'float': 'left',
-        'padding-left': '35px'
+        'padding-left': '20px'
       }
     )
   ).on("sticky_kit:unstick", ->
@@ -24,8 +24,6 @@
   navs = $('a', sidebar)
 
   sections = $('.js-scrolltrack')
-
-  busy = false
 
   sections_positions = []
   sections.each (index, item) ->
@@ -48,9 +46,7 @@
   $(window).scroll ->
     scrollTop = $(this).scrollTop()
 
-    return if busy
-
-    checkIndex = getCurrent(scrollTop)
+    checkIndex = getCurrent(scrollTop + 30)
     if checkIndex != currentIndex
       currentIndex = checkIndex
       navs.removeClass('active')
@@ -62,16 +58,12 @@
 
   $('a', sidebar).click (e) ->
     href = $(this).attr('href')
-    busy = true
     $.scrollTo href, 500,
-      onAfter: ->
-        window.location.replace href
-        busy = false
-        return
+      offset:
+        top: -30
     $('.active', sidebar).removeClass('active')
     $('> a', $(this).parent()).addClass('active')
-
-    return false
+    return #false
 
   if window.location.hash.length
     $('> a', $("a[href=#{window.location.hash}]").parent()).addClass('active')
