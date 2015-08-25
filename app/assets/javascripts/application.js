@@ -1,9 +1,12 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.colorbox
+//= require bootstrap
 //= require plugins
+//= require jquery.colorbox
+
 //= require main_page_gallery
 //= require colorbox
 //= require slogan
+//= require affix
 
 //= require init
