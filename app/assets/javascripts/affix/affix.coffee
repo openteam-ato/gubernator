@@ -1,9 +1,25 @@
 @init_fixed_menu = () ->
   sidebar = $('.js-menu-sidebar')
 
-  $('.js-fixed-menu').stick_in_parent
+  $('.js-fixed-menu').stick_in_parent(
     offset_top: 10
-    recalc_every: 1
+  ).on("sticky_kit:stick", ->
+    $('.mainblock').removeClass('col-xs-offset-2')
+    $('.mainblock').css(
+      {
+        'float': 'left',
+        'padding-left': '35px'
+      }
+    )
+  ).on("sticky_kit:unstick", ->
+    $('.mainblock').addClass('col-xs-offset-2')
+    $('.mainblock').css(
+      {
+        'float': 'none',
+        'padding-left': '15px'
+      }
+    )
+  )
 
   navs = $('a', sidebar)
 
