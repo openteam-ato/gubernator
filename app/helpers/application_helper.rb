@@ -115,4 +115,8 @@ module ApplicationHelper
     controller_path.split('/')[-2].try(:to_sym)
   end
 
+  def from_russian_to_param(title)
+    Russian.translit(title.sub(' ', '-')).downcase!.underscore.dasherize
+  end
+
 end

@@ -1,0 +1,8 @@
+<div class="images">
+  <h1><%= link_to object.title, "#{request.path}/#{from_russian_to_param(object.title)}" %></h1>
+  <% object.gallery_pictures.each do |picture| %>
+    <div class="col-xs-6 col-md-4">
+      <%= link_to (image_tag picture.picture_url), "#{request.path}/#{from_russian_to_param(object.title)}", :class => 'thumbnail img-responsieve' %>
+    </div>
+  <% end  %>
+</div>
