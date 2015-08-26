@@ -1,0 +1,12 @@
+<% content_for :content do %>
+  <div class="content_wrapper">
+    <div class="hobbies_page_wrapper">
+
+      <%= render_partial_for_region @content %>
+
+      <%= render_partial_for_region @first_gallery, 'hobbies_page' %>
+      <%= render_partial_for_region @second_gallery, 'hobbies_page' %>
+      <%= render_partial_for_region @third_gallery, 'hobbies_page' %>
+    </div>
+  </div>
+<% end %>
