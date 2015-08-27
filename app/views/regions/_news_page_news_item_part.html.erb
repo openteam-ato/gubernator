@@ -14,7 +14,9 @@
         <% if object.images.any? %>
           <% object.images.each do |photo| %>
             <div class="col-xs-6 col-md-3">
-              <%= link_to (image_tag photo.url, :class => 'img-responsive'), photo.url, :class => 'thumbnail js-colorbox', :rel => 'colorbox' %>
+              <%= link_to photo.url, :class => 'thumbnail js-colorbox', :rel => 'colorbox' do %>
+                <%= image_tag (photo.thumbnail.try(&:url) || photo.url), :class => 'img-responsive' %>
+              <% end %>
             </div>
           <% end %>
         <% end %>
