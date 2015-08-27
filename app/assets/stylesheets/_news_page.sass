@@ -76,3 +76,21 @@
     blockquote
       p
         margin: 0
+
+    .answer
+      +clearfix
+      margin-top: -15px
+
+      div
+        &:first-child
+          float: left
+
+        &:last-child
+          padding-left: 95px
+
+      &:after
+        clear: both
+
+    blockquote
+      border: 0
+      margin-left: 30px
