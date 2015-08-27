@@ -1,3 +1,5 @@
+<% content_for :page_title, strip_tags(object.title).squish %>
+
 <div class="news_item_wrapper">
   <div class="row item">
     <div class="col-xs-2 date"><%= l Date.parse(object.since), :format => :custom %></div>
