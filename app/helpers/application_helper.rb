@@ -7,7 +7,7 @@ module ApplicationHelper
     prefix = "#{prefix}_" if prefix.present?
     if region && (region.response_status == 200 || !region.response_status?)
       partial = "regions/#{prefix}#{region.template}"
-      render :partial => partial,
+      render :partial => partial.to_s.parameterize('_').underscore,
       :locals => { :object => region.content, :response_status => region.response_status }
     else
       render :partial => 'regions/error', :locals => { :region => region }
