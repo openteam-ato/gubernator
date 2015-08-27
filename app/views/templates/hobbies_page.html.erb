@@ -1,4 +1,6 @@
 <% content_for :content do %>
+  <%= render_partial_for_region @subnavigation, 'position' if @subnavigation %>
+
   <div class="content_wrapper">
     <div class="hobbies_page_wrapper row">
       <div class="col-xs-12">

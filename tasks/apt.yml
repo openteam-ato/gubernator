@@ -1,0 +1,20 @@
+---
+- name: Update apt
+  apt: update_cache=yes
+  sudo: yes
+
+- name: Install base packages
+  apt: pkg={{ item  }} state=latest
+  sudo: yes
+  with_items:
+    - git-core
+    - build-essential
+    - nodejs
+    - curl
+    - python-psycopg2
+    - postgresql
+    - postgresql-client
+    - libpq-dev
+    - postgresql-contrib
+    - nfs-common # make virtualbox faster
+    - libcurl4-openssl-dev
