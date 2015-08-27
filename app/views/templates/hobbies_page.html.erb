@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <%= render_partial_for_region @content %>
 
-        <%= render_partial_for_region @first_gallery,  @page.slug == 'uvlecheniya' ? 'hobbies_page' : @page.slug%>
+        <%= render_partial_for_region @first_gallery,  @page.slug == 'uvlecheniya' ? 'hobbies_page' : @page.slug.underscore %>
         <%= render_partial_for_region @second_gallery, 'hobbies_page' %>
         <%= render_partial_for_region @third_gallery, 'hobbies_page' %>
       </div>
