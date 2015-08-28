@@ -1,0 +1,27 @@
+<div class="video_page_wrapper">
+  <div class="row">
+    <% object.items.each do |video| %>
+      <% code = strip_tags(video.annotation) %>
+      <% youtube_link = "http://www.youtube.com/watch?v=#{code}" %>
+      <% youtube = VideoInfo.new(youtube_link) %>
+
+      <div class="col-xs-6 col-md-3 item">
+        <%= link_to video.link, :class => 'thumbnail' do %>
+          <%= image_tag youtube.thumbnail_medium, :size => '320x180', :class => 'img-responsive' %>
+
+          <div class="title">
+            <%= video.title %>
+          </div>
+        <% end %>
+
+        <div class='date'><%= l Date.parse(video.since), :format => :custom %></div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if object.pagination %>
+    <% @array = object.items %>
+    <% @array = Kaminari.paginate_array(@array, :total_count => object.pagination.total_count).page(object.pagination.current_page).per(object.pagination.per_page) %>
+    <%= paginate @array, :outer_window => 3 %>
+  <% end %>
+</div>

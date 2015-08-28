@@ -39,7 +39,9 @@ GEM
     annotate (2.6.10)
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
+    ansi (1.5.0)
     arel (4.0.2)
+    ast (2.1.0)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     brakeman (3.0.5)
@@ -131,10 +133,11 @@ GEM
     hike (1.2.3)
     hirb (0.7.3)
     hitimes (1.2.2)
-    htmlentities (4.3.3)
+    htmlentities (4.3.4)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
+    iso8601 (0.8.6)
     jquery-colorbox-rails (0.3.2)
       railties (>= 3.1, <= 5.0)
     jquery-rails (2.1.4)
@@ -155,6 +158,10 @@ GEM
     net-ssh (2.9.2)
     netrc (0.10.3)
     non-stupid-digest-assets (1.0.4)
+    oga (1.2.3)
+      ast
+      ruby-ll (~> 2.1)
+    open_uri_redirections (0.2.1)
     openteam-capistrano (1.0.12)
       airbrake (~> 3.1.16)
       capistrano (~> 3.1)
@@ -202,6 +209,9 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    ruby-ll (2.1.2)
+      ansi
+      ast
     ruby2ruby (2.1.4)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
@@ -257,10 +267,13 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    video_info (2.4.2)
+    video_info (2.5.0)
       addressable
       htmlentities
-      multi_json
+      iso8601
+      multi_json (~> 1.11)
+      oga
+      open_uri_redirections
     whenever (0.9.4)
       chronic (>= 0.6.3)
 
@@ -299,4 +312,7 @@ DEPENDENCIES
   sitemap_generator
   uglifier
   unicorn
-  video_info
+  video_info (~> 2.5.0)
+
+BUNDLED WITH
+   1.10.6

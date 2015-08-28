@@ -1,0 +1,12 @@
+<% content_for :page_title, strip_tags(object.title).squish %>
+
+<div class="video_page_wrapper">
+  <div class="row item">
+    <div class="col-xs-12 entry">
+      <% code = strip_tags(object.annotation) %>
+      <% youtube_link = "http://www.youtube.com/watch?v=#{code}" %>
+      <% youtube = VideoInfo.new(youtube_link) %>
+      <iframe width="480" height="360" src="<%= youtube.embed_url %>" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+  </div>
+</div>
