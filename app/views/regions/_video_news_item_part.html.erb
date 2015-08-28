@@ -1,12 +1,49 @@
 <% content_for :page_title, strip_tags(object.title).squish %>
 
-<div class="video_page_wrapper">
+<div class="video_page_wrapper item_part">
   <div class="row item">
-    <div class="col-xs-12 entry">
-      <% code = strip_tags(object.annotation) %>
-      <% youtube_link = "http://www.youtube.com/watch?v=#{code}" %>
-      <% youtube = VideoInfo.new(youtube_link) %>
+    <div class="col-xs-6 entry">
+      <% youtube = youtube_object(object.annotation) %>
       <iframe width="480" height="360" src="<%= youtube.embed_url %>" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+
+    <div class="col-xs-6 mlt">
+      <% object.more_like_this.each do |mlt| %>
+        <% youtube = youtube_object(mlt.annotation) %>
+
+        <div class="row mlt-item">
+          <div class="col-xs-4 image">
+            <%= image_tag youtube.thumbnail_small %>
+          </div>
+
+          <div class="col-xs-8">
+            <div class="title_and_date">
+              <span class='pull-left title'>
+                <%= link_to mlt.title, mlt.link %>
+              </span>
+              <span class='pull-right date'>
+                <%= l Date.parse(mlt.since), :format => :custom %>
+              </span>
+            </div>
+
+            <div class="text">
+              <%= mlt.body %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row video_info">
+    <div class="col-xs-12">
+      <h1 class='video_title'><%= object.title %></h1>
+
+      <div class="video_text">
+        <%= raw object.body %>
+      </div>
+
+      <div class='date pull-right'><%= l Date.parse(object.since), :format => :custom %></div>
     </div>
   </div>
 </div>

@@ -1,4 +1,11 @@
 .video_page_wrapper
+  &.item_part
+    .item
+      border-bottom: 0
+      margin-bottom: 0
+      padding-bottom: 0
+      min-height: auto
+
   .item
     margin-bottom: 20px
     border-bottom: 1px solid #ccc
@@ -22,3 +29,56 @@
       font-size: 12px
       text-decoration: none
       margin-left: 5px
+
+    .mlt
+      background: image-url('videoback.jpg') repeat 0 0
+      height: 360px
+      margin-left: -15px
+      padding-left: 20px
+      padding-top: 7px
+
+      .mlt-item
+        margin: 10px 0
+        height: 108px
+
+        .title_and_date
+          +clearfix
+
+          .title
+            width: 190px
+
+            a
+              text-decoration: underline
+
+              &:hover
+                text-decoration: none
+
+          .date
+            color: #505050
+            font-size: 12px
+            font-family: 'Myriad Pro', 'Trebuchet MS', arial
+
+        .text
+          clear: both
+          color: #505050
+          font-size: 12px
+
+  .video_info
+    padding-bottom: 30px
+
+    h1
+      font-size: 16px
+      font-weight: bolder
+      margin-bottom: 15px
+      color: #07754d
+      font-family: 'Myriad Pro', 'Trebuchet MS', arial
+
+    .video_text, .date
+      font-size: 13px
+      font-weight: 400
+      line-height: 18px
+      color: #888
+      font-family: 'Myriad Pro', 'Trebuchet MS', arial
+
+    .date
+      margin-top: 30px

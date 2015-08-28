@@ -1,9 +1,7 @@
 <div class="video_page_wrapper">
   <div class="row">
     <% object.items.each do |video| %>
-      <% code = strip_tags(video.annotation) %>
-      <% youtube_link = "http://www.youtube.com/watch?v=#{code}" %>
-      <% youtube = VideoInfo.new(youtube_link) %>
+      <% youtube = youtube_object(video.annotation) %>
 
       <div class="col-xs-6 col-md-3 item">
         <%= link_to video.link, :class => 'thumbnail' do %>
