@@ -1,12 +1,12 @@
 <% content_for :page_title, strip_tags(object.title).squish %>
 
-<div class="news_item_wrapper">
+<div class="galleria_page_wrapper">
   <div class="row item">
     <div class="col-xs-12 entry">
       <div class="title">
         <%= strip_tags(object.title) %>
-        <p class='date'><%= l Date.parse(object.since), :format => :custom %></p>
       </div>
+      <p class='date'><%= l Date.parse(object.since), :format => :custom %></p>
 
       <div class="images row">
         <% if object.images.any? %>
