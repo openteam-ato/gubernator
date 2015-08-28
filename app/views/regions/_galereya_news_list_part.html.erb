@@ -1,8 +1,20 @@
-<div class="images">
-  <% object.items.each do |item| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to (image_tag item.images.first.thumbnail.url.sub(/\d+-\d+/,"230-230!n"), :size => '230x230', :class => 'img-responsive'),
-        item.slug, :class => 'thumbnail js-colorbox', :rel => 'colorbox' %>
-    </div>
-  <% end  %>
+<div class="galleria_page_wrapper">
+  <div class="images">
+    <% object.items.each do |item| %>
+      <div class="col-xs-6 col-md-3 item js-galleria-item">
+        <%= link_to (image_tag item.images.first.thumbnail.url.sub(/\d+-\d+/,"230-230!n"), :size => '230x230', :class => 'img-responsive'),
+          item.slug, :class => 'thumbnail' %>
+        <div class="title js-title">
+          <%= item.title %>
+        </div>
+        <%= link_to item.title, item.link, :class => 'js-galleria-link link' %>
+      </div>
+    <% end  %>
+  </div>
+
+  <% if object.pagination %>
+    <% @array = object.items %>
+    <% @array = Kaminari.paginate_array(@array, :total_count => object.pagination.total_count).page(object.pagination.current_page).per(object.pagination.per_page) %>
+    <%= paginate @array, :outer_window => 3 %>
+  <% end %>
 </div>

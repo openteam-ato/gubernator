@@ -9,5 +9,6 @@
 //= require slogan
 //= require affix
 //= require slide-up
+//= require galleria_page
 
 //= require init

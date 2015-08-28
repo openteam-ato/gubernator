@@ -1,0 +1,23 @@
+<% content_for :page_title, strip_tags(object.title).squish %>
+
+<div class="news_item_wrapper">
+  <div class="row item">
+    <div class="col-xs-12 entry">
+      <div class="title">
+        <%= strip_tags(object.title) %>
+      </div>
+
+      <div class="images row">
+        <% if object.images.any? %>
+          <% object.images.each do |photo| %>
+            <div class="col-xs-6 col-md-3">
+              <%= link_to photo.url, :class => 'thumbnail js-colorbox', :rel => 'colorbox' do %>
+                <%= image_tag (photo.thumbnail.try(&:url).try(:sub, /\d+-\d+/,"230-230!n") || photo.url), :class => 'img-responsive' %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
