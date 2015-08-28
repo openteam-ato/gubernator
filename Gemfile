@@ -28,6 +28,7 @@ group :default do
   gem 'russian'
   gem 'simple_form'
   gem 'sitemap_generator'
+  gem 'video_info'
 end
 
 group :development do

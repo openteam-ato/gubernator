@@ -1,10 +1,5 @@
 app:
-  domain:             .domain
   secret:             SECRET
-  url:                http://domain.url/
-  host:               host
-  nocache_host:       nocache.host
-  from:               mail@mail.ma
 
 cms:
   url:                http://cms.url/
@@ -16,3 +11,6 @@ errors:
 
 storage:
   url:                http://storage.url/
+
+youtube:
+  key:                KEY
