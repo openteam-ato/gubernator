@@ -121,15 +121,16 @@ module ApplicationHelper
 
   def archive_links(parts_array)
     return "" if parts_array.empty?
-    @events = parts_array.content.items.map(&:since)
 
     base_path = parts_array.content.collection_link
 
     list_type = parts_array.type.underscore.gsub!('_part', '')
 
-    current_year = params[:parts_params].try(:[], list_type).try(:[], "interval_year")
+    current_year = params[:parts_params].try(:[], list_type).try(:[], "interval_year") || DateTime.parse(parts_array.content.try(:since)).year rescue ''
 
-    result = gallery_years.map { |year| content_tag :li, link_to(year, "#{base_path}/?parts_params[#{list_type}][interval_year]=#{year}"), :class => current_year == year.to_s ? 'active' : nil  }
+    result = gallery_years.map do |year|
+      content_tag :li, link_to(year, "#{base_path}/?parts_params[#{list_type}][interval_year]=#{year}"), :class => current_year.to_s == year.to_s ? 'active' : nil
+    end
 
     result
   end
