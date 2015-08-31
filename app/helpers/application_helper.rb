@@ -122,9 +122,9 @@ module ApplicationHelper
   def archive_links(parts_array)
     return "" if parts_array.empty?
 
-    base_path = parts_array.content.collection_link
+    base_path = parts_array.content.collection_link || request.path.split("-").first.gsub(/\/prosmotr\//,"")
 
-    list_type = parts_array.type.underscore.gsub!('_part', '')
+    list_type = "news_list"
 
     current_year = params[:parts_params].try(:[], list_type).try(:[], "interval_year") || DateTime.parse(parts_array.content.try(:since)).year rescue ''
 
