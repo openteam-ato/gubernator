@@ -4,7 +4,7 @@
   span
     display: block
     float: left
-    font-size: 13px
+    font-size: 1.3rem
     height: 21px
     line-height: 23px
     margin-right: 4px
@@ -22,3 +22,25 @@
 
     a
       color: inherit
+
+@media (max-width: $screen-xs-max)
+  .pagination
+    padding-left: 0 !important
+
+    span
+      display: none
+
+      &.next, &.prev, &.current
+        display: block
+
+      &.current
+        background: transparent
+        color: #07754d
+
+@media (max-width: $screen-md-max)
+  .pagination
+    padding-left: 137px
+
+@media (max-width: $screen-sm-max)
+  .pagination
+    padding-left: 100px

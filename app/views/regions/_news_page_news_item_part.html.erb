@@ -2,14 +2,19 @@
 
 <div class="news_item_wrapper">
   <div class="row item">
-    <div class="col-xs-2 date"><%= l Date.parse(object.since), :format => :custom %></div>
-    <div class="col-xs-10 entry">
+    <div class="col-sm-2 hidden-xs date"><%= l Date.parse(object.since), :format => :custom %></div>
+    <div class="col-xs-12 col-sm-10 entry">
       <div class="title">
         <%= strip_tags(object.title) %>
+        <p class='visible-xs date'>
+          <%= l Date.parse(object.since), :format => :custom %>
+        </p>
       </div>
+
       <div class="text">
         <%= raw object.body %>
       </div>
+
       <div class="images row">
         <% if object.images.any? %>
           <% object.images.each do |photo| %>
