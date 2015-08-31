@@ -10,5 +10,6 @@
 //= require affix
 //= require slide-up
 //= require galleria_page
+//= require mobilecheck
 
 //= require init
