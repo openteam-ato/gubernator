@@ -4,6 +4,10 @@ body
 .body
   font-family: 'Myriad Pro', 'Trebuchet MS', arial
 
+  .navbar-default
+    background-color: transparent
+    border: 0
+
   a
     outline: none
     color: #07754d
@@ -69,3 +73,22 @@ body
     .content_wrapper
       padding: 0 76px 30px
       min-height: 300px
+
+@media (max-width: $screen-xs-max)
+  .body
+    .white_wrapper
+      .main_navigation
+        padding: 30px 0 20px 50px
+
+        .search-wrapper
+          margin-top: 10px
+          float: left !important
+
+          .twitter_icon
+            margin-right: 10px
+
+        .navbar-collapse
+          border: 0
+
+          .nav
+            width: 185px

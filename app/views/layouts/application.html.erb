@@ -24,7 +24,17 @@
           <div class="row">
             <!-- navigation && search -->
             <div class="col-xs-12 main_navigation <%= params[:path].try(:split, '/').try(:[], 1) %>">
-              <%= render_partial_for_region @main_navigation, 'main' %>
+              <nav class='navbar navbar-default pull-left'>
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <%= render_partial_for_region @main_navigation, 'main' %>
+              </nav>
 
               <div class="pull-right search-wrapper">
                 <%= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk', :class => ['twitter_icon', 'pull-left'], :target => :_blank %>
