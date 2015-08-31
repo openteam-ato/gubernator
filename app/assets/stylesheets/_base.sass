@@ -13,13 +13,19 @@ body
     color: #07754d
 
   .top_header
-    .with_background
-      background: image-url('logotype.png') no-repeat 0 0
-      width: 432px
-      height: 152px
-      display: block
-      text-indent: -9999px
-      margin-top: 16px
+    a
+      &.background
+        background: image-url('logotype.png') no-repeat 0 0
+
+      &.big
+        width: 432px
+        height: 152px
+        display: block
+        text-indent: -9999px
+        margin-top: 16px
+
+    .small
+      padding-top: 30px
 
   .white_wrapper
     background: #fff
@@ -78,7 +84,7 @@ body
   .body
     .white_wrapper
       .main_navigation
-        padding: 30px 0 20px 50px
+        padding: 30px 0 20px 30px
 
         .search-wrapper
           margin-top: 10px

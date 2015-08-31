@@ -1,15 +1,17 @@
 <div class="news_list_wrapper">
   <ul>
     <% object.items.each do |news| %>
-      <li>
-        <div class='date'>
-          <%= l Date.parse(news.since) %>
-        </div>
-        <div class="link">
-          <%= link_to strip_tags(news.title), news.link %>
-        </div>
-        <div class="annotation">
-          <%= raw news.annotation %>
+      <li class='row'>
+        <div class="col-xs-12">
+          <div class='date'>
+            <%= l Date.parse(news.since) %>
+          </div>
+          <div class="link">
+            <%= link_to strip_tags(news.title), news.link %>
+          </div>
+          <div class="annotation">
+            <%= raw news.annotation %>
+          </div>
         </div>
       </li>
     <% end %>

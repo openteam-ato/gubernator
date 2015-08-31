@@ -13,9 +13,15 @@
     <div class="body container-fluid">
       <div class="container main_container">
         <!-- top logotype -->
-        <div class="top_header row">
+        <div class="top_header row hidden-xs">
           <div class="col-xs-12">
-            <%= link_to 'Главная', '/', :class => 'with_background' %>
+            <%= link_to 'Главная', '/', :class => 'background big' %>
+          </div>
+        </div>
+
+        <div class="visible-xs top_header">
+          <div class="col-xs-12 small">
+            <%= link_to image_tag('logo_small.png', class: ['img-responsieve']), '/' %>
           </div>
         </div>
 
@@ -55,22 +61,29 @@
           <div class="slide-up js-slide-up">
             <i class="fa fa-arrow-circle-up"></i>
           </div>
+
           <div class="col-xs-12 footer">
-            <div class='pull-left'>
-              <p>
-                © Сергей Жвачкин,  2015.
-              </p>
-              <p>
-                Ваши идеи и предложения по развитию Томской области можно направлять по почте <%= mail_to 'idea@tomsk.gov.ru' %>
-            </p>
-          </div>
-          <div class="pull-right">
-            <p>
-              Фото: Валерий Доронин
-            </p>
-            <p class='second'>
-              Игорь Крамаренко
-            </p>
+            <div class="row">
+              <div class="col-xs-6">
+                <div class='pull-left'>
+                  <p>
+                    © Сергей Жвачкин,  2015.
+                  </p>
+                  <p>
+                    Ваши идеи и предложения по развитию Томской области можно направлять по почте <%= mail_to 'idea@tomsk.gov.ru' %>
+                </p>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="pull-right">
+                <p>
+                  Фото: Валерий Доронин
+                </p>
+                <p class='second'>
+                  Игорь Крамаренко
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -78,7 +91,7 @@
     </div>
 
     <% if Rails.env.development? %>
-      <div class="development">
+      <div class="development hidden-xs">
         <%= link_to 'JSON', @link_to_json, :class => 'json', :target => :_blank %>
       </div>
     <% end %>
