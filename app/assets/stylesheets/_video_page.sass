@@ -19,7 +19,6 @@
       margin-bottom: 0
       border: 0
       text-decoration: underline
-      font-weight: 400
 
       &:hover
         text-decoration: none
@@ -29,7 +28,7 @@
 
     .date
       color: #888
-      font-size: 12px
+      font-size: 1.2rem
       text-decoration: none
       margin-left: 5px
 
@@ -40,6 +39,10 @@
       padding-left: 20px
       padding-top: 7px
 
+      h4
+        color: #07754d
+        padding-left: 15px
+
       .mlt-item
         margin: 10px 0
         height: 108px
@@ -48,7 +51,7 @@
           +clearfix
 
           .title
-            width: 190px
+            width: 180px
 
             a
               text-decoration: underline
@@ -58,30 +61,53 @@
 
           .date
             color: #505050
-            font-size: 12px
+            font-size: 1.2rem
             font-family: 'Myriad Pro', 'Trebuchet MS', arial
 
         .text
           clear: both
           color: #505050
-          font-size: 12px
+          font-size: 1.2rem
 
   .video_info
     padding-bottom: 30px
 
     h1
-      font-size: 16px
+      font-size: 1.6rem
       font-weight: bolder
       margin-bottom: 15px
       color: #07754d
       font-family: 'Myriad Pro', 'Trebuchet MS', arial
 
     .video_text, .date
-      font-size: 13px
-      font-weight: 400
+      font-size: 1.3rem
       line-height: 18px
       color: #888
       font-family: 'Myriad Pro', 'Trebuchet MS', arial
 
     .date
       margin-top: 30px
+
+@media (max-width: $screen-xs-max)
+  .video_page_wrapper
+    .item
+      .mlt
+        background: transparent
+        height: auto
+        margin-left: 0
+        padding-left: 0
+        padding-top: 7px
+
+    .video_info
+      .date
+        margin-top: 30px
+        margin-right: 20px
+
+@media (max-width: $screen-md-max)
+  .video_page_wrapper
+    .item
+      .mlt
+        .mlt-item
+          .title_and_date
+            .title
+              width: 115px

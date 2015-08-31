@@ -2,21 +2,23 @@
 
 <div class="video_page_wrapper item_part">
   <div class="row item">
-    <div class="col-xs-6 entry">
+    <div class="col-lg-6 entry col-xs-12">
       <% youtube = youtube_object(object.annotation) %>
-      <iframe width="480" height="360" src="<%= youtube.embed_url %>" frameborder="0" allowfullscreen=""></iframe>
+      <iframe width="480" height="360" src="<%= youtube.embed_url %>" frameborder="0" allowfullscreen="" class='hidden-xs'></iframe>
+      <%= link_to (image_tag youtube.thumbnail_small, :class => 'img-responsive'), youtube.embed_url, :class => "visible-xs" %>
     </div>
 
-    <div class="col-xs-6 mlt">
+    <div class="col-lg-6 mlt col-xs-12">
+      <h4 class='visible-xs'>Еще видео</h4>
       <% object.more_like_this.each do |mlt| %>
         <% youtube = youtube_object(mlt.annotation) %>
 
         <div class="row mlt-item">
-          <div class="col-xs-4 image">
-            <%= image_tag youtube.thumbnail_small %>
+          <div class="col-sm-2 hidden-xs image">
+            <%= image_tag youtube.thumbnail_small, :class => 'img-responsive' %>
           </div>
 
-          <div class="col-xs-8">
+          <div class="col-xs-12 col-sm-10">
             <div class="title_and_date">
               <span class='pull-left title'>
                 <%= link_to mlt.title, mlt.link %>
@@ -27,7 +29,7 @@
             </div>
 
             <div class="text">
-              <%= mlt.body.truncate(130) %>
+              <%= mlt.body.truncate(110) %>
             </div>
           </div>
         </div>

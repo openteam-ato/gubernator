@@ -54,63 +54,6 @@ module ApplicationHelper
     end
   end
 
-  def humanize_passing_score(passing_score_budget, passing_score_payment, budget_places)
-    if passing_score_budget == passing_score_payment
-      content_tag(:abbr, passing_score_budget, :title => 'Минимальный пороговый балл', :class => 'js-tooltip')
-    else
-      if budget_places > 0
-        content_tag(:abbr, passing_score_budget, :title => 'Минимальный пороговый балл на бюджетное место', :class => 'js-tooltip') + ', ' +
-        content_tag(:abbr, passing_score_payment, :title => 'Минимальный пороговый балл на платное место', :class => 'js-tooltip')
-      else
-        content_tag(:abbr, passing_score_payment, :title => 'Минимальный пороговый балл', :class => 'js-tooltip')
-      end
-    end
-  end
-
-  def empty_message
-    arr = []
-    message = ''
-    return message if params['subjects'].blank?
-    params['subjects'].each do |subject|
-      if subject.second['is_selected'] == 'true'
-        subj = @subjects.subjects.select {|s| s['slug'] == subject.first}.first
-        arr << subj if subj['passing_score_payment'].to_i > subject.second['passing_score'].to_i && subject.second['passing_score'].to_i > 0
-      end
-    end
-    content_tag :p, "Количество баллов, которое вы указали, ниже минимального порогового балла: #{arr.map{|s| s['kind']}.join(', ')}", :class => :warning unless arr.empty?
-  end
-
-  def warning_message
-    arr = params['subjects']
-
-    message = ''
-    return message if arr.try(&:values).blank?
-
-    #if arr['matematika'] && arr['matematika']['is_selected'] == 'true'
-      #matematika_passing_score = arr['matematika']['passing_score'].to_i
-      #matematika = Subject.find_by_slug('matematika')
-      #if matematika_passing_score >= matematika.passing_score_payment && matematika_passing_score < matematika.passing_score_budget
-        #message += content_tag :p, "С указанным количеством баллов по математике (#{matematika_passing_score}) вы можете претендовать только на платное место", :class => :warning
-      #end
-    #end
-
-    if arr.values.select{ |hash| hash['is_selected'] == 'true' }.size < 3
-      message += content_tag :p, 'Необходимо выбрать минимум 3 вступительных испытания!', :class => :warning
-    end
-
-    arr = arr.values.uniq.select{ |hash| hash['is_selected'] == 'true' }
-    if arr.select{ |hash| hash['passing_score'] != '0' }.count > 0 && arr.select{ |hash| hash['passing_score'] == '0' }.count > 0
-      message += content_tag :p, 'Результаты фильтрации могут не соответствовать действительности. Укажите баллы для всех вступительных испытаний!', :class => :warning
-    end
-
-    message.html_safe
-  end
-
-  def online_help_operation_time
-    ( !Time.zone.now.sunday? && Time.zone.now > Time.zone.parse('9:00:00') && Time.zone.now < Time.zone.parse('18:00:00') ) ||
-    ( Time.zone.now.saturday? && Time.zone.now > Time.zone.parse('10:00:00') && Time.zone.now < Time.zone.parse('15:00:00') )
-  end
-
   def current_namespace
     controller_path.split('/')[-2].try(:to_sym)
   end
@@ -137,5 +80,13 @@ module ApplicationHelper
 
   def gallery_years
     (2012..Time.zone.now.year.to_i).map { |year| year }.reverse
+  end
+
+  def mobile_device?
+    if session[:mobile_param]
+      session[:mobile_param] == "1"
+    else
+      request.user_agent =~ /Mobile|webOS/
+    end
   end
 end
