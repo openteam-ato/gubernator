@@ -80,6 +80,33 @@ body
       padding: 0 76px 30px
       min-height: 300px
 
+@media (max-width: $screen-md-max)
+  .body
+    .white_wrapper
+      .main_navigation
+        .search-wrapper
+          margin-right: 0
+
+          .twitter_icon
+            margin-right: 0
+
+          form
+            width: 120px
+
+@media (max-width: $screen-sm-max)
+  .body
+    .white_wrapper
+      .main_navigation
+        .search-wrapper
+          margin-right: 15px
+
+          .twitter_icon
+            margin-right: 15px
+
+        .navbar-collapse
+          .nav
+            width: 400px
+
 @media (max-width: $screen-xs-max)
   .body
     .white_wrapper
@@ -92,6 +119,10 @@ body
 
           .twitter_icon
             margin-right: 10px
+
+          form
+            input
+              width: 90px
 
         .navbar-collapse
           border: 0
