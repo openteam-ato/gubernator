@@ -1,4 +1,12 @@
 .news_list_page_wrapper
+  .header
+    color: #07754d
+    margin-left: 170px
+    margin-bottom: 20px
+
+    h1
+      font-size: 2rem
+
   .item
     margin-bottom: 20px
 
@@ -64,3 +72,9 @@
 
       &:after
         clear: both
+
+@media (max-width: $screen-xs-max)
+  .news_list_page_wrapper
+    .header
+      margin-left: 0
+      margin-bottom: 20px

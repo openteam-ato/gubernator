@@ -7,6 +7,7 @@ body
   .navbar-default
     background-color: transparent
     border: 0
+    float: left
 
   a
     outline: none
@@ -111,27 +112,45 @@ body
   .body
     .white_wrapper
       .content_wrapper
-        padding: 0 0 0 15px
+        padding: 0 0 20px 15px
+        margin-top: 30px
 
       .main_navigation
-        padding: 30px 0 20px 30px
+        padding: 10px 0 0 30px
 
         .search-wrapper
-          margin-top: 10px
+          margin-top: 18px
           float: left !important
-
-          .twitter_icon
-            margin-right: 10px
+          margin-left: 30px
 
           form
+            width: auto
+
             input
               width: 90px
 
-        .navbar-collapse
-          border: 0
+        .navbar-default
+          position: relative
+          float: none
+          margin: 0
 
-          .nav
-            width: 185px
+          button
+            margin-right: 25px
+            margin-top: 8px
+
+          .navbar-brand
+            padding: 5px 0 0 0
+
+          .navbar-collapse
+            border: 0
+            position: absolute
+            background-color: #fff
+            z-index: 10
+            right: 25px
+
+            .nav
+              width: 185px
+              margin-left: -30px
 
   .body
     .white_wrapper
