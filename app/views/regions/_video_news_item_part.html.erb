@@ -1,11 +1,33 @@
 <% content_for :page_title, strip_tags(object.title).squish %>
 
+<% youtube = youtube_object(object.annotation) %>
+<% content_for :meta do %>
+  <meta name='description' content='<%= strip_tags(object.body) %>' />
+  <meta name='og:description' content='<%= strip_tags(object.body) %>' />
+  <meta property='og:image' content='<%= youtube.thumbnail_large %>'/>
+<% end %>
+
+<% content_for :video_info do %>
+  <h1 class='video_title'><%= object.title %></h1>
+
+  <div class="video_text">
+    <%= object.body.to_s.html_safe %>
+  </div>
+
+  <div class='date pull-right'><%= l Date.parse(object.since), :format => :custom %></div>
+  <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+  <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,lj"></div>
+<% end %>
+
 <div class="video_page_wrapper item_part">
   <div class="row item">
     <div class="col-lg-6 entry col-xs-12">
-      <% youtube = youtube_object(object.annotation) %>
       <iframe width="480" height="360" src="<%= youtube.embed_url %>" frameborder="0" allowfullscreen="" class='hidden-xs'></iframe>
       <%= link_to (image_tag youtube.thumbnail_medium, :class => 'img-responsive'), youtube.embed_url, :class => "visible-xs" %>
+    </div>
+
+    <div class="video_info hidden-lg col-xs-12">
+      <%= yield :video_info %>
     </div>
 
     <div class="col-lg-6 mlt col-xs-12">
@@ -37,15 +59,10 @@
     </div>
   </div>
 
-  <div class="row video_info">
+  <div class="row video_info visible-lg">
     <div class="col-xs-12">
-      <h1 class='video_title'><%= object.title %></h1>
-
-      <div class="video_text">
-        <%= raw object.body %>
-      </div>
-
-      <div class='date pull-right'><%= l Date.parse(object.since), :format => :custom %></div>
+      <%= yield :video_info %>
     </div>
   </div>
+
 </div>

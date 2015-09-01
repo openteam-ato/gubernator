@@ -1,4 +1,11 @@
 <% content_for :page_title, strip_tags(object.title).squish %>
+<% content_for :meta do %>
+  <meta name='description' content='<%= strip_tags(object.annotation) %>' />
+  <meta name='og:description' content='<%= strip_tags(object.annotation) %>' />
+  <% if object.images.any? %>
+    <meta property='og:image' content='<%= object.images.first.url %>'/>
+  <% end %>
+<% end %>
 
 <div class="news_item_wrapper">
   <div class="row item">
@@ -12,8 +19,8 @@
       </div>
 
       <div class="text">
-        <%= raw object.annotation %>
-        <%= raw object.body %>
+        <%= object.annotation.to_s.html_safe %>
+        <%= object.body.to_s.html_safe %>
       </div>
 
       <div class="images row">
