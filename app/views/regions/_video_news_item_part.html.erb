@@ -10,7 +10,7 @@
 <% content_for :video_info do %>
   <h1 class='video_title'><%= object.title %></h1>
 
-  <div class="video_text">
+  <div class='video_text'>
     <%= object.body.to_s.html_safe %>
   </div>
 
@@ -20,29 +20,29 @@
   </div>
 <% end %>
 
-<div class="video_page_wrapper item_part">
-  <div class="row item">
-    <div class="col-lg-6 entry col-xs-12">
-      <iframe width="480" height="360" src="<%= youtube.embed_url %>" frameborder="0" allowfullscreen="" class='hidden-xs'></iframe>
-      <%= link_to (image_tag youtube.thumbnail_medium, :class => 'img-responsive'), youtube.embed_url, :class => "visible-xs" %>
+<div class='video_page_wrapper item_part'>
+  <div class='row item'>
+    <div class='col-lg-6 entry col-xs-12'>
+      <iframe width='480' height='360' src='<%= youtube.embed_url %>' frameborder='0' allowfullscreen='' class='hidden-xs'></iframe>
+      <%= link_to (image_tag youtube.thumbnail_medium, :class => 'img-responsive'), youtube.embed_url, :class => 'visible-xs' %>
     </div>
 
-    <div class="video_info hidden-lg col-xs-12">
+    <div class='video_info hidden-lg col-xs-12'>
       <%= yield :video_info %>
     </div>
 
-    <div class="col-lg-6 mlt col-xs-12">
+    <div class='col-lg-6 mlt col-xs-12'>
       <h4 class='visible-xs'>Еще видео</h4>
       <% object.more_like_this.each do |mlt| %>
         <% youtube = youtube_object(mlt.annotation) %>
 
-        <div class="row mlt-item">
-          <div class="col-sm-2 hidden-xs image">
+        <div class='row mlt-item'>
+          <div class='col-sm-3 hidden-xs image text-center'>
             <%= image_tag youtube.thumbnail_small, :class => 'img-responsive' %>
           </div>
 
-          <div class="col-xs-12 col-sm-10">
-            <div class="title_and_date">
+          <div class='col-xs-12 col-sm-9'>
+            <div class='title_and_date'>
               <span class='pull-left title'>
                 <%= link_to mlt.title, mlt.link %>
               </span>
@@ -52,7 +52,7 @@
             </div>
 
             <div class='text'>
-              <%= mlt.body.truncate(110) %>
+              <%= truncate_html mlt.body.to_s.html_safe, :length => 180 %>
             </div>
           </div>
         </div>
@@ -60,8 +60,8 @@
     </div>
   </div>
 
-  <div class="row video_info visible-lg">
-    <div class="col-xs-12">
+  <div class='row video_info visible-lg'>
+    <div class='col-xs-12'>
       <%= yield :video_info %>
     </div>
   </div>

@@ -28,6 +28,7 @@ group :default do
   gem 'russian'
   gem 'simple_form'
   gem 'sitemap_generator'
+  gem 'truncate_html'
   gem 'video_info', '~> 2.5.0'
 end
 

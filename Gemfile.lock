@@ -256,6 +256,7 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
+    truncate_html (0.9.3)
     tzinfo (0.3.44)
     uglifier (2.7.1)
       execjs (>= 0.3.0)
@@ -310,6 +311,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.1)
   simple_form
   sitemap_generator
+  truncate_html
   uglifier
   unicorn
   video_info (~> 2.5.0)

@@ -51,13 +51,12 @@
 
       .mlt-item
         margin: 10px 0
-        height: 108px
+        min-height: 100px
 
         .title_and_date
           +clearfix
 
           .title
-            width: 180px
 
             a
               text-decoration: underline
@@ -122,12 +121,3 @@
       .date
         margin-top: 30px
         margin-right: 20px
-
-@media (max-width: $screen-md-max)
-  .video_page_wrapper
-    .item
-      .mlt
-        .mlt-item
-          .title_and_date
-            .title
-              width: 115px
