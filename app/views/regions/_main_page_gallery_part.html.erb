@@ -3,7 +3,7 @@
     <ul>
       <% object.gallery_pictures.each_with_index do |picture, index| %>
         <li class='img_<%= index %> js-main_page-galleria-item'>
-          <%= link_to (image_tag picture.picture_url), picture.picture_url, :class => 'js-colorbox', :rel => 'colorbox' %>
+          <%= link_to (image_tag picture.picture_url), picture.picture_url, :class => 'js-colorbox', :data => { :rel => 'colorbox' } %>
         </li>
       <% end  %>
     </ul>

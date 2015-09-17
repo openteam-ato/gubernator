@@ -4,5 +4,7 @@
     maxWidth: '90%'
     maxHeight: '90%'
     current: 'изображение {current} из {total}'
+    rel: ->
+      $(this).data 'rel'
 
     true
