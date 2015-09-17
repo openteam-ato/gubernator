@@ -1,6 +1,11 @@
 <div class="video_page_wrapper">
   <div class="header">
-    <h1>Видео</h1>
+    <h1>
+      <%= @page.title %>
+      <%= link_to object.rss_link, :target => '_blank', :class => :link_to_rss do %>
+        <span class='fa fa-rss-square'></span>
+      <% end %>
+    </h1>
   </div>
 
   <div class="row video_item">
