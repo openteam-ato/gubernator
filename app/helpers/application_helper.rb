@@ -62,6 +62,22 @@ module ApplicationHelper
     Russian.translit(title.sub(' ', '-')).downcase!.underscore.dasherize
   end
 
+  def entry_date
+    @entry_date ||= begin
+                      @page.regions.to_hash.each do |region_name, region|
+                        if (since = region.try(:[], 'content').try(:[], 'since'))
+                          return since
+                        end
+                      end
+                      nil
+                    end
+  end
+
+  def entries_rss_link(parts_array)
+    part = parts_array.compact.select { |part| part.content.rss_link }.first
+    part.content.rss_link if part
+  end
+
   def archive_links(parts_array)
     return [] unless parts_array.present?
 

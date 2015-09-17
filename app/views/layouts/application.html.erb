@@ -9,6 +9,9 @@
     <%= javascript_include_tag 'application' %>
     <%= yield :meta %>
     <%= csrf_meta_tags %>
+    <% if entry_date %>
+      <meta name='entry_date' content='<%= entry_date %>'>
+    <% end %>
   </head>
   <body>
     <div class="body container-fluid">
@@ -55,7 +58,7 @@
               </div>
             </div>
           </div>
-          <div class="row index">
+          <div class="row">
             <div class="col-xs-12">
               <%= yield(:content) %>
             </div>
