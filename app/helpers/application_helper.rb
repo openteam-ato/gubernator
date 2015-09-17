@@ -8,7 +8,7 @@ module ApplicationHelper
     if region && (region.response_status == 200 || !region.response_status?)
       partial = "regions/#{prefix}#{region.template}"
       render :partial => partial,
-      :locals => { :object => region.content, :response_status => region.response_status }
+      :locals => { :part_title => region.part_title, :object => region.content, :response_status => region.response_status }
     else
       render :partial => 'regions/error', :locals => { :region => region }
     end
