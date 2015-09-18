@@ -15,7 +15,7 @@ module Gubernator
     )
     config.time_zone = 'Novosibirsk'
     config.i18n.default_locale = :ru
-    config.i18n.available_locales = [:ru, :en]
+    config.i18n.available_locales = [:ru]
     config.middleware.insert_before 'Rack::Runtime', Rack::UTF8Sanitizer
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
