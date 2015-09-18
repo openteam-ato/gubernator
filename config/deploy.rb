@@ -4,6 +4,8 @@ set :default_stage, :ato
 
 set :bundle_binstubs, -> { shared_path.join('bin') }
 
+set :bundle_env_variables, { 'NOKOGIRI_USE_SYSTEM_LIBRARIES' => 1 }
+
 namespace :sitemap do
 
   desc 'Create symlink from shared sitemaps to public'
