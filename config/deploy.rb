@@ -2,6 +2,8 @@ require 'openteam/capistrano/deploy'
 
 set :default_stage, :ato
 
+set :bundle_binstubs, -> { shared_path.join('bin') }
+
 namespace :sitemap do
 
   desc 'Create symlink from shared sitemaps to public'
