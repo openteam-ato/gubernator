@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Gubernator::Application.config.secret_key_base = 'c716a9378f4775c5cea16d3f1a8b0d18ff3afa8a6fc718b3b0577b66382d5446b47ef2b7c9287cdc45368aa0f546bafbb6b1cf95ad3b3ff22d26411a2ab842dd'
+Gubernator::Application.config.secret_key_base = Settings['app.secret']

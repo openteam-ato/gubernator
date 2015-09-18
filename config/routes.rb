@@ -1,4 +1,4 @@
-Gubernator::Application.routes.draw do
+Rails.application.routes.draw do
   root :to => 'application#index'
 
   # legacy routes
