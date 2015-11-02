@@ -3,6 +3,7 @@
 //= require bootstrap
 //= require plugins
 //= require jquery.colorbox
+//= require social-likes
 
 //= require main_page_gallery
 //= require colorbox

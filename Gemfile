@@ -28,6 +28,10 @@ group :default do
   gem 'video_info', '~> 2.5.0'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-social-likes'
+end
+
 group :development do
   gem 'annotate',                       :require => false
   gem 'brakeman',                       :require => false
