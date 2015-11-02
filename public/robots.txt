@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: *?parts_params
+Disallow: */search?utf8=
+
+host: gubernator.tomsk.ru
+sitamap: http://gubernator.tomsk.ru/sitemap.xml
