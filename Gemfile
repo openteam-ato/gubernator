@@ -23,6 +23,7 @@ group :default do
   gem 'sass-rails',                     '~> 4.0.1'
   gem 'simple_form'
   gem 'sitemap_generator'
+  gem 'time_diff'
   gem 'truncate_html'
   gem 'uglifier'
   gem 'video_info', '~> 2.5.0'
