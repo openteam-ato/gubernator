@@ -8,17 +8,17 @@
 <% end %>
 
 <div class="news_item_wrapper">
-  <div class="row item">
+  <div class="row item" itemscope itemtype="http://schema.org/Article">
     <div class="col-sm-2 hidden-xs date"><%= l Date.parse(object.since), :format => :custom %></div>
     <div class="col-xs-12 col-sm-10 entry index">
-      <div class="title">
+      <div class="title" itemprop="name">
         <%= strip_tags(object.title) %>
-        <p class='visible-xs date'>
-          <%= l Date.parse(object.since), :format => :custom %>
+        <p class='visible-xs date' itemprop="datePublished" content="<%= l(Date.parse(object.since), :format => '%Y-%m-%d')  %>">
+          <%= l Date.parse(object.since), :format => :custom  %>
         </p>
       </div>
 
-      <div class="text">
+      <div class="text" itemprop="articleBody">
         <%= object.annotation.to_s.html_safe %>
         <%= object.body.to_s.html_safe %>
       </div>
