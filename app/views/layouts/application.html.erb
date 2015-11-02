@@ -6,12 +6,12 @@
     <%= favicon_link_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <%= yield :meta %>
     <%= csrf_meta_tags %>
     <% if entry_date %>
       <meta name='entry_date' content='<%= entry_date %>'>
     <% end %>
+    <%= render :partial => 'metrika' if Rails.env.production? %>
   </head>
   <body>
     <div class="body container-fluid">
@@ -105,6 +105,6 @@
     <% end %>
 
   </div>
-  <%= render :partial => 'metrika' if Rails.env.production? %>
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
