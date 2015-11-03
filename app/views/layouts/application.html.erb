@@ -19,7 +19,7 @@
         <!-- top logotype -->
         <div class="top_header row hidden-xs">
           <div class="col-xs-12">
-            <%= link_to 'Главная', '/', :class => 'background big' %>
+            <%= link_to 'Главная', '/', :class => 'background big', :title => 'Официальный сайт губернатора томской области Сергея Жвачкина' %>
           </div>
         </div>
 
@@ -51,7 +51,7 @@
               </nav>
 
               <div class="pull-right search-wrapper hidden-xs">
-                <%= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk', :class => ['twitter_icon', 'pull-left'], :target => :_blank %>
+                <%= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk', :class => ['twitter_icon', 'pull-left'], :target => :_blank, :alt => 'твиттер губернатора Жвачкина' %>
                 <%= form_tag '/ru/search', :method => :get, :class => ['pull-left', 'search_form'] do %>
                   <input type='search' placeholder='Поиск...' name='parts_params[search][q]' value='<%= params[:parts_params].present? && params[:parts_params][:search].present? ? params[:parts_params][:search][:q] : nil %>'>
                 <% end %>
