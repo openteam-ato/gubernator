@@ -3,4 +3,4 @@ Disallow: *?parts_params
 Disallow: */search?utf8=
 
 host: gubernator.tomsk.ru
-sitamap: http://gubernator.tomsk.ru/sitemap.xml
+sitemap: http://gubernator.tomsk.ru/sitemap.xml
