@@ -26,3 +26,4 @@
 capybara-*.html
 pickle-email-*.html
 rerun.txt
+*.swp
