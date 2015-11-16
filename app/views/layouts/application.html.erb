@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= site_title(content_for?(:page_title) ? yield(:page_title).squish.html_safe : "#{@page_title} — #{strip_tags(@site_name.content.body)}") %></title>
+    <title><%= site_title(content_for?(:page_title) ? yield(:page_title).squish.html_safe : @page_title) %></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <%= favicon_link_tag %>
 
