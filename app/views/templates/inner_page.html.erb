@@ -6,7 +6,7 @@
   <div class="content_wrapper">
     <% if ['NewsListPart', 'NewsItemPart'].include?(@content.try(:type)) && @content && !request.fullpath.include?('galereya') %>
       <%= render_partial_for_region @content, 'news_page'%>
-    <% elsif @content && request.fullpath.split('/').include?('galereya') %>
+    <% elsif @content && request.fullpath.include?('galereya') %>
       <%= render_partial_for_region @content, 'galereya' %>
     <% else %>
       <%= render_partial_for_region @content %>

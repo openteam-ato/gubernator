@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module GalleryHelper
 
   def galleria_link(picture)

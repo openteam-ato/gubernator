@@ -88,7 +88,7 @@ module ApplicationHelper
     current_year = params[:parts_params].try(:[], list_type).try(:[], "interval_year") || DateTime.parse(parts_array.content.try(:since)).year rescue ''
 
     result = gallery_years.map do |year|
-      content_tag :li, link_to(year, "#{base_path}/?"+url_encode("parts_params[#{list_type}][interval_year]")+"="+year.to_s), :class => current_year.to_s == year.to_s ? 'active' : nil
+      content_tag :li, link_to(year, "#{base_path}?"+url_encode("parts_params[#{list_type}][interval_year]")+"="+year.to_s), :class => current_year.to_s == year.to_s ? 'active' : nil
     end
 
     result
