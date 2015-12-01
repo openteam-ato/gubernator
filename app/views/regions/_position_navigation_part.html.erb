@@ -1,6 +1,21 @@
 <div class="position_page_wrapper">
   <div class="subnavigation <%= params[:path].try(:split, '/').try(:[], 1) %>">
-    <%= render_cms_navigation object.try(:values).try(:first).try(:[], 'children'), 'nav nav-pills pull-left' %>
+    <% nav = object.try(&:values).try(&:first) %>
+    <ul class='nav nav-pills pull-left'>
+      <% subnav_selected = false %>
+      <% content_for :subnav do %>
+        <% nav.children.each do |child| %>
+          <% subnav_selected = true if child.second.selected %>
+          <li<%= ' class="active"'.html_safe if child.second.selected %>>
+            <%= link_to child.second.title, child.second.path %>
+          </li>
+        <% end %>
+      <% end %>
+      <li<%= ' class="active"'.html_safe if nav.selected && !subnav_selected %>>
+        <%= link_to nav.title, nav.path %>
+      </li>
+      <%= yield :subnav %>
+    </ul>
 
     <ul class='nav nav-pills pull-right'>
       <% archive_links(@content).each do |e| %>
