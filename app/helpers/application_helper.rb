@@ -1,4 +1,11 @@
 module ApplicationHelper
+
+  def canonical_url
+    return "<link rel='canonical' href='/' />" if request.path == '/ru'
+
+    ''
+  end
+
   def page_title(title = nil)
     @page_title ||= I18n.t("page_title.#{controller_name}.#{action_name}", :title => title).html_safe
   end
