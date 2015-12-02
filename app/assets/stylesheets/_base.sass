@@ -60,11 +60,17 @@ body
             text-transform: uppercase
             font-size: 1.7rem
             font-family: 'Pf Bulletin SansPro medium', arial
-            padding: 10px 20px
+            padding: 10px 12px
 
             &:hover, &:focus
               background-color: #fff
               color: #07754d
+
+          &:first-child a
+            padding-left: 0
+
+          &:last-child a
+            padding-right: 0
 
       .search-wrapper
         margin-top: 7px
@@ -90,6 +96,12 @@ body
     .content_wrapper
       padding: 0 76px 30px
       min-height: 300px
+
+  .appeal-form
+    width: 732px
+
+  .btn-success
+    color: #fff
 
 @media (max-width: $screen-md-max)
   .body

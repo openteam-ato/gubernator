@@ -12,5 +12,6 @@
 //= require slide-up
 //= require galleria_page
 //= require mobilecheck
+//= require iframe_resizer
 
 //= require init

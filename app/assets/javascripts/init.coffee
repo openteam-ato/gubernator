@@ -5,3 +5,6 @@ $ ->
 
   init_fixed_menu() if $('.js-fixed-menu').length
   init_galleria() if $('.js-galleria-item').length
+  init_iframe_resize() if $('#autoIframe').length
+
+  return
