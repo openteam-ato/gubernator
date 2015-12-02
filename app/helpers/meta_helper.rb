@@ -12,11 +12,11 @@ module MetaHelper
     title.squish
   end
 
-  def meta_tags
+  def meta_tags(current_page = 1)
     return '' if @page_meta.blank?
 
     result =  ''
-    result += "<meta name='description' content='#{@page_meta.description}' />\n" if @page_meta.description.present?
+    result += "<meta name='description' content='#{@page_meta.description.squish}#{ " – страница #{current_page}" if current_page > 1 }' />\n" if @page_meta.description.present?
     result += "<meta name='keywords' content='#{@page_meta.keywords}' />\n" if @page_meta.keywords.present?
     result += "\n"
 
@@ -31,8 +31,8 @@ module MetaHelper
     else
       result += "<meta property='og:title' content='#{@page_title}' />\n"
     end
-    result += "<meta property='og:description' content='#{@page_meta.og_description}' />\n" if @page_meta.og_description.present?
-    result += "<meta property='og:description' content='#{@page_meta.description}' />\n" if @page_meta.description.present? && @page_meta.og_description.blank?
+    result += "<meta property='og:description' content='#{@page_meta.og_description.squish}' />\n" if @page_meta.og_description.present?
+    result += "<meta property='og:description' content='#{@page_meta.description.squish}' />\n" if @page_meta.description.present? && @page_meta.og_description.blank?
     result += "<meta property='og:type' content='#{@page_meta.og_type}' />\n" if @page_meta.og_type.present?
     result += "<meta property='og:url' content='#{request.original_url.to_s.force_encoding('UTF-8')}' />\n"
     result += "<meta property='og:image' content='#{@page_meta.image_url}' />\n" if @page_meta.image_url.present?

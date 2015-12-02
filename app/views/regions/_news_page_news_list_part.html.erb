@@ -1,4 +1,11 @@
-<div class="news_list_page_wrapper">
+<% content_for :page_title do %>
+  <%= @page_title %>
+  <%= "– страница #{object.pagination.current_page}" if object.pagination.current_page > 1 %>
+<% end %>
+
+<% content_for :meta, meta_tags(object.pagination.current_page), :flush => true %>
+
+<div class='news_list_page_wrapper'>
   <div class='header'>
     <h1>
       <%= @page.title %>
@@ -9,16 +16,16 @@
   </div>
 
   <% object.items.each do |news| %>
-    <div class="row item">
-      <div class="col-sm-2 hidden-xs date"><%= l Date.parse(news.since), :format => :custom %></div>
-      <div class="col-xs-12 col-sm-10 entry">
-        <div class="title">
+    <div class='row item'>
+      <div class='col-sm-2 hidden-xs date'><%= l Date.parse(news.since), :format => :custom %></div>
+      <div class='col-xs-12 col-sm-10 entry'>
+        <div class='title'>
           <%= link_to strip_tags(news.title), news.link %>
           <p class='visible-xs date'>
             <%= l Date.parse(news.since), :format => :custom %>
           </p>
         </div>
-        <div class="annotation">
+        <div class='annotation'>
           <%= raw news.annotation %>
         </div>
       </div>
