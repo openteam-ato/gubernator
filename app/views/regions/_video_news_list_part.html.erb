@@ -14,7 +14,7 @@
 
       <div class="col-xs-6 col-md-3 item">
         <%= link_to video.link, :class => 'thumbnail' do %>
-          <%= image_tag youtube.thumbnail_medium, :size => '320x180', :class => 'img-responsive' %>
+          <%= image_tag youtube.thumbnail_medium, :size => '320x180', :class => 'img-responsive', :alt => video.title %>
 
           <div class="title">
             <%= video.title %>

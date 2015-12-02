@@ -3,8 +3,9 @@
 
   <% object.gallery_pictures.each do |picture| %>
     <div class="col-xs-6 col-md-3">
-      <%= link_to (image_tag picture.picture_url.sub(/\d+-\d+/,"230-230!n"), :size => '230x230', :class => 'img-responsive'),
-        picture.picture_url, :class => 'thumbnail js-colorbox', :data => { :rel => 'colorbox' }, :title => picture.description.present? ? picture.description : nil %>
+      <%= link_to picture.picture_url, :class => 'thumbnail js-colorbox', :data => { :rel => 'colorbox' }, :title => picture.description.presence || nil do %>
+        <%= image_tag picture.picture_url.sub(/\/\d+-\d+\//, '/230-230!n/'), :size => '230x230', :class => 'img-responsive', :alt => picture.description %>
+      <% end %>
     </div>
   <% end  %>
 </div>

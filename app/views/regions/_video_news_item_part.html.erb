@@ -24,7 +24,9 @@
   <div class='row item'>
     <div class='col-lg-6 entry col-xs-12'>
       <iframe width='480' height='360' src='<%= youtube.embed_url %>' allowfullscreen='' class='hidden-xs'></iframe>
-      <%= link_to (image_tag youtube.thumbnail_medium, :class => 'img-responsive'), youtube.embed_url, :class => 'visible-xs' %>
+      <%= link_to youtube.embed_url, :class => 'visible-xs' do %>
+        <%= image_tag youtube.thumbnail_medium, :class => 'img-responsive', :size => '320x180', :alt => object.title %>
+      <% end %>
     </div>
 
     <div class='video_info hidden-lg col-xs-12'>
@@ -38,7 +40,7 @@
 
         <div class='row mlt-item'>
           <div class='col-sm-3 hidden-xs image text-center'>
-            <%= image_tag youtube.thumbnail_small, :class => 'img-responsive' %>
+            <%= image_tag youtube.thumbnail_small, :class => 'img-responsive', :size => '120x90', :alt => mlt.title %>
           </div>
 
           <div class='col-xs-12 col-sm-9'>
