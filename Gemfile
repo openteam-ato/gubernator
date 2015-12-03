@@ -5,7 +5,6 @@ group :default do
   gem 'celluloid',                      '= 0.16.0'
   gem 'coffee-rails',                   '~> 4.0.1'
   gem 'compass-rails'
-  gem 'curb'
   gem 'esp-commons'
   gem 'font-awesome-rails'
   gem 'gilenson'

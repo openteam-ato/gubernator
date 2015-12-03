@@ -33,18 +33,25 @@ module Cmsable
     @cms_address ||= "#{Settings['cms.url']}/nodes/#{Settings['cms.site_slug']}"
   end
 
-  def curl_request
-    @curl_request ||= Curl::Easy.perform(remote_url) do |curl|
-      curl.headers['Accept'] = 'application/json'
+  def rest_request
+    @rest_request ||= RestClient::Request.execute(
+      :method => :get,
+      :url => remote_url,
+      :headers => {
+        :Accept => 'application/json',
+        :timeout => 600
+      }
+    ) do |response, request, result, &block|
+      response
     end
   end
 
   def request_status
-    @request_status ||= curl_request.response_code
+    @request_status ||= rest_request.code
   end
 
   def request_body
-    @request_body ||= curl_request.body_str
+    @request_body ||= rest_request.body
   end
 
   def page_regions

@@ -325,7 +325,6 @@ DEPENDENCIES
   celluloid (= 0.16.0)
   coffee-rails (~> 4.0.1)
   compass-rails
-  curb
   esp-commons
   font-awesome-rails
   foreman
