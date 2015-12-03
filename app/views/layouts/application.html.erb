@@ -99,12 +99,17 @@
     </div>
 
     <% if Rails.env.development? %>
-      <div class="development hidden-xs">
+      <div class='development-json'>
         <%= link_to 'JSON', @link_to_json, :class => 'json', :target => :_blank %>
+      </div>
+
+      <div class='development-resolution'>
       </div>
     <% end %>
 
   </div>
+
   <%= javascript_include_tag 'application' %>
+
 </body>
 </html>

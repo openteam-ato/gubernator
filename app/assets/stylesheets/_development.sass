@@ -1,6 +1,48 @@
-.development
+.development-json
   position: absolute
-  right: 143px
+  left: 0
+  bottom: 0
   background-color: #fff
-  padding: 30px 50px
-  top: 0
+  padding: 5px 20px
+  border-top: 1px solid #ccc
+  border-right: 1px solid #ccc
+
+.development-resolution
+  width: 100px
+  height: 30px
+  position: fixed
+  bottom: 0
+  right: 0
+  background-color: #fff
+  border-top: 1px solid #ccc
+  border-left: 1px solid #ccc
+
+  &:before
+    color: #000
+    display: block
+    width: 100px
+    text-align: center
+    position: fixed
+    content: ''
+    bottom: 5px
+    right: 0
+
+  @media (max-width: $screen-xs-max)
+
+    &:before
+      content: 'extra small'
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+
+    &:before
+      content: 'small'
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+
+    &:before
+      content: 'middle'
+
+  @media (min-width: $screen-lg-min)
+
+    &:before
+      content: 'large'

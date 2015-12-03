@@ -2,8 +2,24 @@
   <div id='galleria' class='js-main_page-galleria'>
     <ul>
       <% object.gallery_pictures.each_with_index do |picture, index| %>
+        <%
+          thumb_size = nil
+          case index
+          when 0
+            thumb_size = '237x324'
+          when 1, 2, 3, 7, 8
+            thumb_size = '237x157'
+          when 4, 5
+            thumb_size = '114x157'
+          when 6
+            thumb_size = '484x324'
+          end
+        %>
         <li class='img_<%= index %> js-main_page-galleria-item'>
-          <%= link_to (image_tag picture.picture_url), picture.picture_url, :class => 'js-colorbox', :data => { :rel => 'colorbox' } %>
+          <%= link_to picture.picture_url, :class => 'js-colorbox', :data => { :rel => 'colorbox' } do %>
+            <%= image_tag picture.picture_url.gsub(/\/\d+-\d+\//, "/#{thumb_size.gsub('x', '-')}!n/"), :size => thumb_size,
+              :alt => yield(:page_title).squish.html_safe %>
+          <% end %>
         </li>
       <% end  %>
     </ul>

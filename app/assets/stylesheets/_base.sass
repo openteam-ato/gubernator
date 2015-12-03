@@ -107,6 +107,14 @@ body
   .body
     .white_wrapper
       .main_navigation
+        .navbar-collapse
+          .nav
+            width: 650px
+
+            li
+              &:first-child a
+                padding-left: 12px
+
         .search-wrapper
           margin-right: 0
 
@@ -164,15 +172,23 @@ body
             padding: 5px 0 0 0
 
           .navbar-collapse
-            border: 0
+            border: 1px solid #ccc
+            border-top: 0
             position: absolute
             background-color: #fff
             z-index: 10
             right: 25px
+            padding-left: 0
+            padding-right: 0
 
             .nav
-              width: 185px
-              margin-left: -30px
+              width: 240px
+
+              li
+                clear: left
+
+                &:first-child a
+                  padding-left: 12px
 
   .body
     .white_wrapper
