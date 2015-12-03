@@ -76,4 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   # config.active_record.dump_schema_after_migration = false
+
+  # Some stuff
+  config.middleware.insert_before 'Rack::Runtime', Rack::UTF8Sanitizer
+  config.middleware.use HtmlCompressor::Rack
+
 end

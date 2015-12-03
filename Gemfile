@@ -15,7 +15,6 @@ group :default do
   gem 'net-ssh',                        '= 2.9.2'
   gem 'non-stupid-digest-assets'
   gem 'progress_bar',                   :require => false
-  gem 'rack-utf8_sanitizer'
   gem 'rails',                          '~> 4.2.4'
   gem 'rest-client'
   gem 'russian'
@@ -42,5 +41,7 @@ group :development do
 end
 
 group :production do
+  gem 'htmlcompressor'
+  gem 'rack-utf8_sanitizer'
   gem 'unicorn'
 end

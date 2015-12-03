@@ -46,7 +46,7 @@ module ApplicationHelper
         link_to item['title'], item['external_link']
       end
     else
-      link_to item['title'], item['path']
+      link_to item['title'], item['path'], :title => item['alternative_title'].presence || nil
     end
   end
 

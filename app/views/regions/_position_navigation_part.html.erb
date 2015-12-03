@@ -7,12 +7,12 @@
         <% nav.children.each do |child| %>
           <% subnav_selected = true if child.second.selected %>
           <li<%= ' class="active"'.html_safe if child.second.selected %>>
-            <%= link_to child.second.title, child.second.path %>
+            <%= link_to child.second.title, child.second.path, :title => child.second.alternative_title.presence || nil %>
           </li>
         <% end %>
       <% end %>
       <li<%= ' class="active"'.html_safe if nav.selected && !subnav_selected %>>
-        <%= link_to nav.title, nav.path %>
+        <%= link_to nav.title, nav.path, :title => nav.alternative_title.presence || nil %>
       </li>
       <%= yield :subnav %>
     </ul>
