@@ -1,17 +1,19 @@
+<% raise ActionController::RoutingError.new('Not Found') if object.blank? %>
+
 <% content_for :page_title, strip_tags(object.title).squish %>
 
-<div class="galleria_page_wrapper">
-  <div class="row item">
-    <div class="col-xs-12 entry index">
-      <div class="title">
+<div class='galleria_page_wrapper'>
+  <div class='row item'>
+    <div class='col-xs-12 entry index'>
+      <div class='title'>
         <%= strip_tags(object.title) %>
       </div>
       <p class='date'><%= l Date.parse(object.since), :format => :custom %></p>
 
-      <div class="images row">
+      <div class='images row'>
         <% if object.images.any? %>
           <% object.images.each do |photo| %>
-            <div class="col-xs-6 col-md-3">
+            <div class='col-xs-6 col-md-3'>
               <%= link_to photo.url, :class => 'thumbnail js-colorbox', :data => { :rel => 'colorbox' }, :title => photo.description.presence || nil do %>
                 <%= image_tag photo.url.gsub(/\/\d+-\d+\//, '/230-230!n/'), :size => '230x230', :class => 'img-responsive', :alt => photo.description.presence || nil %>
               <% end %>

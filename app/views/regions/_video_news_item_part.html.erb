@@ -1,6 +1,9 @@
+<% raise ActionController::RoutingError.new('Not Found') if object.blank? %>
+
 <% content_for :page_title, strip_tags(object.title).squish %>
 
 <% youtube = youtube_object(object.annotation) %>
+
 <% content_for :meta do %>
   <meta name='description' content='<%= strip_tags(object.body) %>' />
   <meta name='og:description' content='<%= strip_tags(object.body) %>' />

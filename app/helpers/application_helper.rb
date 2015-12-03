@@ -86,7 +86,7 @@ module ApplicationHelper
   end
 
   def archive_links(parts_array)
-    return [] unless parts_array.present?
+    return [] if parts_array.blank? || parts_array.content.blank?
 
     base_path = parts_array.content.collection_link || request.path.split("-").first.gsub(/\/prosmotr\//,"")
 

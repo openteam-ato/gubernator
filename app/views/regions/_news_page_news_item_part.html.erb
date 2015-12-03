@@ -1,4 +1,7 @@
+<% raise ActionController::RoutingError.new('Not Found') if object.blank? %>
+
 <% content_for :page_title, strip_tags(object.title).squish %>
+
 <% content_for :meta do %>
   <meta name='description' content='<%= strip_tags(object.annotation) %>' />
   <meta name='og:description' content='<%= strip_tags(object.annotation) %>' />
@@ -7,26 +10,26 @@
   <% end %>
 <% end %>
 
-<div class="news_item_wrapper">
-  <div class="row item" itemscope itemtype="http://schema.org/Article">
-    <div class="col-sm-2 hidden-xs date"><%= l Date.parse(object.since), :format => :custom %></div>
-    <div class="col-xs-12 col-sm-10 entry index">
-      <div class="title" itemprop="name">
+<div class='news_item_wrapper'>
+  <div class='row item' itemscope itemtype='http://schema.org/Article'>
+    <div class='col-sm-2 hidden-xs date'><%= l Date.parse(object.since), :format => :custom %></div>
+    <div class='col-xs-12 col-sm-10 entry index'>
+      <div class='title' itemprop='name'>
         <%= strip_tags(object.title) %>
-        <p class='visible-xs date' itemprop="datePublished" content="<%= l(Date.parse(object.since), :format => '%Y-%m-%d')  %>">
+        <p class='visible-xs date' itemprop='datePublished' content='<%= l(Date.parse(object.since), :format => '%Y-%m-%d')  %>'>
           <%= l Date.parse(object.since), :format => :custom  %>
         </p>
       </div>
 
-      <div class="text" itemprop="articleBody">
+      <div class='text' itemprop='articleBody'>
         <%= object.annotation.to_s.html_safe %>
         <%= object.body.to_s.html_safe %>
       </div>
 
-      <div class="images row">
+      <div class='images row'>
         <% if object.images.any? %>
           <% object.images.each do |photo| %>
-            <div class="col-xs-6 col-md-3">
+            <div class='col-xs-6 col-md-3'>
               <%= link_to photo.url, :class => 'thumbnail js-colorbox', :data => { :rel => 'colorbox' } do %>
                 <%= image_tag photo.url.gsub(/\/\d+-\d+\//, '/230-230!n/'), :size => '230x230',
                   :class => 'img-responsive', :alt => photo.description %>
