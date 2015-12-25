@@ -2,24 +2,42 @@
 <% content_for :meta, meta_tags %>
 
 <%= content_for :content do %>
+  <% if Time.now > Time.parse('2015-12-25 19:00') %>
+    <div class='galleria-wrapper text-center'>
+      <h2>С Новым годом!</h2>
+      <% video = VideoInfo.new('https://youtu.be/XkFPsElNyg0') %>
+      <p class='visible-lg'>
+        <%= video.embed_code(iframe_attributes: { width: 800, height: 450 }).html_safe %>
+      </p>
+      <p class='visible-md'>
+        <%= video.embed_code(iframe_attributes: { width: 600, height: 337 }).html_safe %>
+      </p>
+      <p class='visible-sm'>
+        <%= video.embed_code(iframe_attributes: { width: 400, height: 225 }).html_safe %>
+      </p>
+      <p class='visible-xs'>
+        <%= video.embed_code(iframe_attributes: { width: 400, height: 225 }).html_safe %>
+      </p>
+    </div>
+  <% end %>
 
   <%= render_partial_for_region @gallery_of_honor, 'main_page' %>
 
-  <div class="row">
-    <div class="col-lg-5 col-xs-12 col-md-5 col-sm-5">
+  <div class='row'>
+    <div class='col-lg-5 col-xs-12 col-md-5 col-sm-5'>
       <%= render_partial_for_region @news, 'main_page' %>
     </div>
 
-    <div class="col-lg-7 col-xs-12 col-md-7 col-sm-7">
-      <div class="quotes_wrapper">
+    <div class='col-lg-7 col-xs-12 col-md-7 col-sm-7'>
+      <div class='quotes_wrapper'>
         <div class='quote_l'>"</div>
         <p class='quote js-quote'>
           Всегда беру себе высокопрофессиональных и умных замов, которые на своем направлении знают больше, чем я. Можно, конечно, пригласить таких, которые будут только поддакивать – но инициатива должна идти не сверху вниз, а наоборот
-          <span class="quote_r">"</span>
+          <span class='quote_r'>"</span>
         </p>
         <div class='sign'></div>
 
-        <div class="js-quotes-list quotes-list">
+        <div class='js-quotes-list quotes-list'>
           <%= raw @slogan.content.body %>
         </div>
       </div>
