@@ -2,24 +2,22 @@
 <% content_for :meta, meta_tags %>
 
 <%= content_for :content do %>
-  <% if Time.now > Time.parse('2015-12-25 19:00') %>
-    <div class='galleria-wrapper text-center'>
-      <h2>С Новым годом!</h2>
-      <% video = VideoInfo.new('https://youtu.be/XkFPsElNyg0') %>
-      <p class='visible-lg'>
-        <%= video.embed_code(iframe_attributes: { width: 800, height: 450 }).html_safe %>
-      </p>
-      <p class='visible-md'>
-        <%= video.embed_code(iframe_attributes: { width: 600, height: 337 }).html_safe %>
-      </p>
-      <p class='visible-sm'>
-        <%= video.embed_code(iframe_attributes: { width: 400, height: 225 }).html_safe %>
-      </p>
-      <p class='visible-xs'>
-        <%= video.embed_code(iframe_attributes: { width: 400, height: 225 }).html_safe %>
-      </p>
-    </div>
-  <% end %>
+  <div class='galleria-wrapper text-center'>
+    <h2>С Новым годом!</h2>
+    <% video = VideoInfo.new('https://youtu.be/XkFPsElNyg0') %>
+    <p class='visible-lg'>
+      <%= video.embed_code(iframe_attributes: { width: 800, height: 450 }).html_safe %>
+    </p>
+    <p class='visible-md'>
+      <%= video.embed_code(iframe_attributes: { width: 600, height: 337 }).html_safe %>
+    </p>
+    <p class='visible-sm'>
+      <%= video.embed_code(iframe_attributes: { width: 400, height: 225 }).html_safe %>
+    </p>
+    <p class='visible-xs'>
+      <%= video.embed_code(iframe_attributes: { width: 400, height: 225 }).html_safe %>
+    </p>
+  </div>
 
   <%= render_partial_for_region @gallery_of_honor, 'main_page' %>
 
