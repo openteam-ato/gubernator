@@ -2,6 +2,7 @@
 <% content_for :meta, meta_tags %>
 
 <%= content_for :content do %>
+  <% if false %>
   <div class='galleria-wrapper text-center'>
     <h2>С Новым годом!</h2>
     <% video = VideoInfo.new('https://youtu.be/QpzmGtxtQiI') %>
@@ -18,6 +19,7 @@
       <%= video.embed_code(iframe_attributes: { width: 400, height: 225 }).html_safe %>
     </p>
   </div>
+  <% end %>
 
   <%= render_partial_for_region @gallery_of_honor, 'main_page' %>
 
