@@ -1,7 +1,5 @@
 require 'openteam/capistrano/deploy'
 
-set :default_stage, :ato
-
 set :bundle_binstubs, -> { shared_path.join('bin') }
 
 namespace :sitemap do
@@ -17,3 +15,7 @@ namespace :sitemap do
   after 'deploy:finishing', 'sitemap:symlink'
 
 end
+
+set :slackistrano,
+  channel: (Settings['slack.channel'] rescue ''),
+  webhook: (Settings['slack.webhook'] rescue '')

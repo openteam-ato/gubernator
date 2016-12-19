@@ -11,7 +11,6 @@
 /.capistrano
 /config/database.yml
 /config/deploy.yml
-/config/secrets.yml
 /config/settings.yml
 /coverage/
 /db/*.sqlite3
