@@ -44,7 +44,7 @@ GEM
     airbrake (5.6.1)
       airbrake-ruby (~> 1.6)
     airbrake-ruby (1.6.0)
-    airbrussh (1.1.1)
+    airbrussh (1.1.2)
       sshkit (>= 1.6.1, != 1.7.0)
     amq-protocol (1.9.2)
     amqp (1.5.1)
@@ -84,8 +84,10 @@ GEM
       sshkit (~> 1.2)
     capistrano-db-tasks (0.6)
       capistrano (>= 3.0.0)
+    capistrano-faster-assets (1.0.2)
+      capistrano (>= 3.1)
     capistrano-harrow (0.5.3)
-    capistrano-rails (1.2.0)
+    capistrano-rails (1.2.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
     capistrano-rvm (0.1.2)
@@ -111,7 +113,7 @@ GEM
       sass (~> 3.2.19)
     compass-rails (2.0.0)
       compass (>= 0.12.2)
-    concurrent-ruby (1.0.3)
+    concurrent-ruby (1.0.4)
     configliere (0.4.18)
       highline (>= 1.5.2)
       multi_json (>= 1.1)
@@ -182,10 +184,11 @@ GEM
       ast
       ruby-ll (~> 2.1)
     open_uri_redirections (0.2.1)
-    openteam-capistrano (1.0.16)
+    openteam-capistrano (1.0.17)
       airbrake
       capistrano (~> 3.5.0)
       capistrano-db-tasks
+      capistrano-faster-assets
       capistrano-rails
       capistrano-rvm
       capistrano-sidekiq
@@ -262,7 +265,7 @@ GEM
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
     sexp_processor (4.6.0)
-    sidekiq (4.2.7)
+    sidekiq (4.2.9)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
@@ -359,4 +362,4 @@ DEPENDENCIES
   video_info (~> 2.5.0)
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
