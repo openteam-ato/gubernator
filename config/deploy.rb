@@ -1,6 +1,6 @@
 require 'openteam/capistrano/deploy'
 
-set :bundle_binstubs, -> { shared_path.join('bin') }
+append :linked_dirs, 'public/.well-known/acme-challenge'
 
 namespace :sitemap do
 
