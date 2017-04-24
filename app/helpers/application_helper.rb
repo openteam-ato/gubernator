@@ -66,7 +66,7 @@ module ApplicationHelper
   end
 
   def from_russian_to_param(title)
-    Russian.translit(title.sub(' ', '-')).downcase!.underscore.dasherize
+    Russian.translit(title.gsub(/\s+/, '-').gsub(/[!|,]/, '')).downcase.underscore.dasherize
   end
 
   def entry_date
