@@ -1,5 +1,7 @@
 <div class="images">
-  <h1><%= object.title %></h1>
+  <% unless request.path.match('dom-v-kotorom-my-zhivem') %>
+    <h1><%= object.title %></h1>
+  <% end %>
 
   <% object.gallery_pictures.each do |picture| %>
     <div class="col-xs-6 col-md-3">

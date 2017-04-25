@@ -21,6 +21,27 @@
   </div>
   <% end %>
 
+  <% if Time.zone.now >= Time.zone.parse('2017-04-25 17:45') %>
+    <div class='row'>
+      <div class='col-xs-12'>
+        <div class='hidden-xs text-center margin-right-86 margin-bottom-30 margin-left-76'>
+          <%= link_to '/ru/uvlecheniya/dom-v-kotorom-my-zhivem' do %>
+            <%= image_tag 'fotovystavka-lg.jpg', size: '1110x509',
+              alt: 'Дом, в котором мы живем!',
+              class: 'img-responsive' %>
+          <% end %>
+        </div>
+        <div class='visible-xs text-center margin-top-20 margin-right-15 margin-left-15'>
+          <%= link_to '/ru/uvlecheniya/dom-v-kotorom-my-zhivem' do %>
+            <%= image_tag 'fotovystavka-xs.jpg', size: '740x339',
+              alt: 'Дом, в котором мы живем!',
+              class: 'img-responsive' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <%= render_partial_for_region @gallery_of_honor, 'main_page' %>
 
   <div class='row'>

@@ -1,6 +1,19 @@
 body
   background: image-url('top_background.png') no-repeat center 0, image-url('background.png') repeat 0 0
 
+@for $i from 1 through 90
+  .margin-top-#{$i}
+    margin-top: #{$i}px
+
+  .margin-right-#{$i}
+    margin-right: #{$i}px
+
+  .margin-bottom-#{$i}
+    margin-bottom: #{$i}px
+
+  .margin-left-#{$i}
+    margin-left: #{$i}px
+
 .body
   font-family: 'Myriad Pro', 'Trebuchet MS', arial
 
