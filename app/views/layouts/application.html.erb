@@ -11,7 +11,7 @@
     <% if entry_date %>
       <meta name='entry_date' content='<%= entry_date %>'>
     <% end %>
-    <%= render :partial => 'metrika' if Rails.env.production? %>
+    <%= render partial: 'metrika' if Rails.env.production? %>
   </head>
   <body>
     <div class="body container-fluid">
@@ -19,7 +19,8 @@
         <!-- top logotype -->
         <div class="top_header row hidden-xs">
           <div class="col-xs-12">
-            <%= link_to 'Главная', '/', :class => 'background big', :title => 'Официальный сайт губернатора Томской области Сергея Жвачкина' %>
+            <%#= link_to 'Главная', '/', class: 'background big', title: 'Официальный сайт губернатора Томской области Сергея Жвачкина' %>
+            <%= link_to 'Главная', '/', class: 'background big', title: 'Официальный сайт Сергея Жвачкина' %>
           </div>
         </div>
 
@@ -31,12 +32,13 @@
               <nav class='navbar navbar-default'>
                 <div class="navbar-header visible-xs">
                   <a class="navbar-brand" href="/">
-                    <%= image_tag 'logo_small.png', :size => '45x45' %>
+                    <%= image_tag 'logo_small.png', size: '45x45' %>
                   </a>
 
                   <div class="search-wrapper visible-xs">
-                    <%= form_tag '/ru/search', :method => :get, :class => ['pull-left', 'search_form'] do %>
-                      <input type='search' placeholder='Поиск...' name='parts_params[search][q]' value='<%= params[:parts_params].present? && params[:parts_params][:search].present? ? params[:parts_params][:search][:q] : nil %>'>
+                    <%= form_tag '/ru/search', method: :get, class: 'pull-left search_form' do %>
+                      <input type='search' placeholder='Поиск...' name='parts_params[search][q]'
+                        value='<%= params[:parts_params].present? && params[:parts_params][:search].present? ? params[:parts_params][:search][:q] : nil %>'>
                     <% end %>
                   </div>
 
@@ -51,8 +53,11 @@
               </nav>
 
               <div class="pull-right search-wrapper hidden-xs">
-                <%= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk', :class => ['twitter_icon', 'pull-left'], :target => :_blank, :alt => 'твиттер губернатора Жвачкина' %>
-                <%= form_tag '/ru/search', :method => :get, :class => ['pull-left', 'search_form'] do %>
+                <%#= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk',
+                  class: 'twitter_icon pull-left', target: '_blank', title: 'твиттер губернатора Жвачкина' %>
+                <%= link_to 'Твиттер Сергея Жвачкина', 'https://twitter.com/governoroftomsk',
+                  class: 'twitter_icon pull-left', target: '_blank', title: 'твиттер Сергея Жвачкина' %>
+                <%= form_tag '/ru/search', method: :get, class: 'pull-left search_form' do %>
                   <input type='search' placeholder='Поиск...' name='parts_params[search][q]' value='<%= params[:parts_params].present? && params[:parts_params][:search].present? ? params[:parts_params][:search][:q] : nil %>'>
                 <% end %>
               </div>
@@ -86,7 +91,7 @@
 
     <% if Rails.env.development? %>
       <div class='development-json'>
-        <%= link_to 'JSON', @link_to_json, :class => 'json', :target => :_blank %>
+        <%= link_to 'JSON', @link_to_json, class: 'json', target: '_blank' %>
       </div>
 
       <div class='development-resolution'>
