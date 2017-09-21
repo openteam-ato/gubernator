@@ -21,6 +21,7 @@
   </div>
   <% end %>
 
+  <% if false %>
   <% if Time.zone.now >= Time.zone.parse('2017-04-25 17:45') %>
     <div class='row'>
       <div class='col-xs-12'>
@@ -40,6 +41,7 @@
         </div>
       </div>
     </div>
+  <% end %>
   <% end %>
 
   <%= render_partial_for_region @gallery_of_honor, 'main_page' %>
