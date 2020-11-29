@@ -63,6 +63,13 @@
         <div class='js-quotes-list quotes-list'>
           <%= raw @slogan.content.body %>
         </div>
+
+        <% if Time.zone.now > DateTime.parse('2020-12-01 00:00') %>
+          <div class='text-center margin-top-140 margin-bottom-20 margin-left-50 margin-right-20'>
+            <%= render partial: 'pos_widget' %>
+          </div>
+        <% end %>
+
       </div>
     </div>
   </div>
